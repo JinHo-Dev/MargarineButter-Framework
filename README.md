@@ -1,6 +1,7 @@
 # MargarineButter Framework
 This is a simple Single-Page-Application (SPA) web framework that helps people make web application easy and fast. 
 This is for timeless people who don't want to develop whole page but need clean and fancy styled web. 
+Like its name; MargarineButter, All the things occurred in websites using this framework seem smooth, fluidal, and plain. 
 
 # Features
 * Responsive Web
@@ -20,7 +21,12 @@ It detects how much to scroll by calculating position of destination object and 
 And you can set the time of scrolling. 
 
 * Back button
-> It has built-in back button. So user can navigate easily and feel hierarchy of the page. 
+> It has built-in back button. 
+So user can navigate easily and feel hierarchy of the page. 
+
+* Light Weight
+> It takes up little of server storage and of course, uses small amount of traffic. 
+To users who surfing your website around, It shows web faster and less laggy. 
 
 # Installation
 1. Get bianry files
