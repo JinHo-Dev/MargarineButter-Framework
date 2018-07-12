@@ -4,7 +4,7 @@ This is for timeless people who don't want to develop whole page but need clean 
 Like its name; MargarineButter, All the things occurred in websites using this framework seem smooth, fluidal, and plain. 
 
 # Features
-> ### Responsive Web
+### Responsive Web
 With this, you can make a web supporting both pc and mobile devices. 
 It detects the screen size and shows the best fits. 
 With larger screen like PC, menubar appears at the left side. 
