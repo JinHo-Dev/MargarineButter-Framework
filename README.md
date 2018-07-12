@@ -10,22 +10,22 @@ It detects the screen size and shows the best fits.
 With larger screen like PC, menubar appears at the left side. 
 With smaller screen like mobile phone, menubar changes into tabbar that apears at the bottom.
 
-* Single-Page-Application (SPA)
-> The websites that use this framework can show multiple pages without reloading pages. 
+### Single-Page-Application (SPA)
+The websites that use this framework can show multiple pages without reloading pages. 
 At the url there are hash (#), and by using that user can go around the page as they using other websites. 
 It conveys the feeling of continuity, and It is faster with less traffic uses. 
 
-* Smooth Scrolling
-> Its embeded smooth scrolling script provides switching between menus more smooth. 
+### Smooth Scrolling
+Its embeded smooth scrolling script provides switching between menus more smooth. 
 It detects how much to scroll by calculating position of destination object and height of page. 
 And you can set the time of scrolling. 
 
-* Back button
-> It has built-in back button. 
+### Back button
+It has built-in back button. 
 So user can navigate easily and feel hierarchy of the page. 
 
-* Light Weight
-> It takes up little of server storage and of course, uses small amount of traffic. 
+### Light Weight
+It takes up little of server storage and of course, uses small amount of traffic. 
 To users who surfing your website around, It shows web faster and less laggy. 
 
 # Installation
@@ -35,7 +35,7 @@ To users who surfing your website around, It shows web faster and less laggy.
 # API Reference
 Later some explanation about functions will be added. 
 
-# Log History
+# Version History
 * v1.0 (2018.07.11)
 > Added to GitHub. 
 
@@ -44,7 +44,7 @@ see example page here
 * <a href="http://square.dothome.co.kr/">square.dothome.co.kr</a>
 
 # Credit
-* https://github.com/JinHo-Dev/MargarineButter-Framework
+https://github.com/JinHo-Dev/MargarineButter-Framework
 
 # License
 No License (No permission) <a href="https://choosealicense.com/no-permission/">Information</a>
@@ -52,7 +52,8 @@ No License (No permission) <a href="https://choosealicense.com/no-permission/">I
 &copy;<a href="https://github.com/JinHo-Dev/">JinHo-Dev</a>
 
 # Contact
-* e-mail
-> dpdlalslr@gmail.com
-* GitHub
-> https://github.com/JinHo-Dev/
+### e-mail
+dpdlalslr@gmail.com
+
+### GitHub
+https://github.com/JinHo-Dev/
