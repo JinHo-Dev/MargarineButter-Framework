@@ -794,18 +794,18 @@ document.head.appendChild(fr);
 }
 
 function hashReader(){
-document.getElementById("iframeA").style.display="none";
-if(location.hash.length>1){
-if(location.hash.substr(-1)=="/"){
-dataJS(location.hash.substr(2)+"index");
-}
-else{
-dataJS(location.hash.substr(2));
-}
-}
-else{
-location.hash='/';
-}
+	document.getElementById("iframeA").style.display="none";
+	if(location.hash.substr(0,2)=="#/"){
+		if(location.hash.substr(-1)=="/"){
+			dataJS(location.hash.substr(2)+"index");
+		}
+		else{
+			dataJS(location.hash.substr(2));
+		}
+	}
+	else{
+		location.hash="/"+location.hash.substr(1);
+	}
 }
 
 window.onhashchange=hashReader;

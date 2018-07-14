@@ -44,7 +44,7 @@ see example page here
 * <a href="http://square.dothome.co.kr/">square.dothome.co.kr</a>
 
 # Credit
-https://github.com/JinHo-Dev/MargarineButter-Framework
+* https://github.com/JinHo-Dev/MargarineButter-Framework
 
 # License
 No License (No permission) <a href="https://choosealicense.com/no-permission/">Information</a>
