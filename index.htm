@@ -661,28 +661,32 @@ window.open(link);
 }
 
 function wH(ct,cl){
-return "<div id='index"+(ch++)+"' class='header'></div>"
+s+= "<div id='index"+(ch++)+"' class='header'></div>"
 	+"<div class='name'>"+ct+"</div>"
 	+"<div class='highlight'>"+cl+"</div>";
 }
 
 function wA(ct){
-return "<div class='article'>"+ct+"</div>";
+s+= "<div class='article'>"+ct+"</div>";
 }
 
 function wS(){
-return "<div class='space'></div>";
+s+= "<div class='space'></div>";
 }
 
 function wB(ct,cl){
-return "<div class='button' onclick=\"goTo('"+cl+"')\">"+ct+"</div>";
+s+= "<div class='button' onclick=\"goTo('"+cl+"')\">"+ct+"</div>";
 }
 
 function wF(ct){
-return "<div class='footer'></div>";
+s+= "<div class='footer'></div>";
 }
 
-function wForm(ct){
+function wForm(){
+if(loaded==0){
+loaded=1;
+}
+var ct=s;
 var sv='';
 var sv_m='';
 for(var i=0;i<ch;i++){
@@ -727,10 +731,12 @@ goBack_u.style.top="calc(25% - "+(60*ch-20)/4+"px - 20px)";
 goBack.onclick=function(){goTo(a);}
 }
 
+var s='';
+
 function checkLoad(){
 var arr=document.getElementsByClassName("preload");
 var chk=1;
-if(loaded==0){
+if(loaded==0&&s.length<=0){
 chk=0;
 }
 for(var i=0;i<arr.length;i++){
@@ -745,7 +751,8 @@ break;
 }
 }
 if(chk==1){
-loadContent();
+//loadContent();
+s='';
 article.style.display="block";
 clearInterval(o);
 window.onscroll();
@@ -761,7 +768,7 @@ loaded=0;
 o=setInterval(function(){checkLoad();});
 var fr=document.createElement('script');
 fr.setAttribute("type","text/javascript");
-fr.setAttribute("src",a+".js?"+(new Date()-0));
+fr.setAttribute("src",a+".margarine?"+(new Date()-0));
 document.head.appendChild(fr);
 }
 
@@ -777,6 +784,29 @@ location.hash='index';
 window.onhashchange=hashReader;
 
 hashReader();
+
+
+
+
+
+
+
+function fromXML(){
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+if (this.readyState == 4 && this.status == 200) {
+myFunction(this);
+}
+};
+xhttp.open("GET", "books.xml", true);
+xhttp.send();
+}
+
+function myFunction(xml) {
+var xmlDoc = xml.responseXML;
+document.getElementById("demo").innerHTML=xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+}
+
 
 </script>
 </html>
