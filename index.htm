@@ -530,6 +530,7 @@ transform:translateY(-1496px);
 <div id="article"><center></center></div>
 <div id="menuSelect_m"></div>
 
+<iframe name="iframeA" id="iframeA" src="sdfsdf.htm" style="background:white;position:fixed;border:none;width:100%;height:100%;margin:0;padding:0;"></iframe>
 </body>
 <script langauge="JavaScript">
 var loaded=0;
@@ -592,6 +593,7 @@ window.onscroll=scr;
 function scr(){
 h=(document.body.scrollHeight|document.documentElement.scrollHeight);
 m=-1;
+if(ch>0){
 if(!(article.offsetHeight>0)){
 m=0;
 }
@@ -605,12 +607,15 @@ m=i;
 }
 }
 }
+}
 for(var i=0;i<ch;i++){
 document.getElementById("menu"+i).style.backgroundColor='#fff';
 document.getElementById("menu"+i).style.color='#aaa';
 }
+if(ch>0){
 document.getElementById('menu'+m).style.backgroundColor='#09f';
 document.getElementById('menu'+m).style.color='#fff';
+}
 }
 
 window.onresize=function(){
@@ -649,10 +654,16 @@ oldBrowser.style.display="block";
 }
 
 function goTo(link){
-if(link.substr(0,1)=="#"){
+if(link.substr(0,2)=="#/"){
 loadCover.style.opacity=0.01;
 loadCover.style.display="block";
 location.hash=link.substr(1);
+setTimeout(function(){loadCover.style.opacity=1;window.scrollTo(0,0)},10);
+}
+else if(link.substr(0,1)=="#"){
+loadCover.style.opacity=0.01;
+loadCover.style.display="block";
+location.hash="/"+link.substr(1);
 setTimeout(function(){loadCover.style.opacity=1;window.scrollTo(0,0)},10);
 }
 else{
@@ -680,6 +691,16 @@ s+= "<div class='button' onclick=\"goTo('"+cl+"')\">"+ct+"</div>";
 
 function wF(ct){
 s+= "<div class='footer'></div>";
+}
+
+function wL(ct){
+if(loaded==0){
+loaded=1;
+setTimeout(function(){loadCover.style.opacity=0;},10);
+setTimeout(function(){loadCover.style.display='none';},310);
+}
+document.getElementById("iframeA").style.display="";
+iframeA.location.replace(ct);
 }
 
 function wForm(){
@@ -773,11 +794,17 @@ document.head.appendChild(fr);
 }
 
 function hashReader(){
+document.getElementById("iframeA").style.display="none";
 if(location.hash.length>1){
-dataJS(location.hash.substr(1));
+if(location.hash.substr(-1)=="/"){
+dataJS(location.hash.substr(2)+"index");
 }
 else{
-location.hash='index';
+dataJS(location.hash.substr(2));
+}
+}
+else{
+location.hash='/';
 }
 }
 

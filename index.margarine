@@ -4,6 +4,7 @@ wA("It's a beautiful night, we're looking for something dumb to do");
 wA("Hey baby, I think I wanna marry you");
 wA("Is it the look in your eyes, or is it this dancing juice");
 wA("Who cares baby, I think I wanna marry you");
+wB("button","#link");
 wF();
 
 //****************************************************************************************************
