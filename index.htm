@@ -559,7 +559,7 @@ if(k>5){
 window.scrollTo(window.scrollX,document.getElementById('index'+n).offsetTop);
 clearInterval(o);
 }
-else if(n==3&&h-window.scrollY-window.innerHeight<10){
+else if(n==ch-1&&h-window.scrollY-window.innerHeight<10){
 clearInterval(o);
 }
 else if(window.scrollY-document.getElementById('index'+n).offsetTop>4){
@@ -691,7 +691,7 @@ sv_m+="<div id='menu"+i+"_m' style='left:"+(60*i)+"px;' class='menu_m'></div>";
 }
 for(var i=0;i<ch;i++){
 sv+="<div onclick='menu("+i+")' onmousedown='menu("+i+")' style='top:"+(60*i)+"px;' class='clickable'></div>";
-sv_m+="<div onclick='menu("+i+")' onmousedown='menu("+i+")' style='left:"+(25*i)+"%;' class='clickable_m'></div>";
+sv_m+="<div onclick='menu("+i+")' onmousedown='menu("+i+")' style='left:"+(100/ch*i)+"%;' class='clickable_m'></div>";
 }
 menuSelect.innerHTML=sv;
 menuSelect_m.innerHTML=sv_m;
@@ -710,7 +710,7 @@ ct.style.backgroundImage="url('resource/"+c+"')";
 ct.style.backgroundPosition=d;
 ct.style.backgroundSize=e;
 var ct_m=document.getElementById("menu"+a+"_m");
-ct_m.style.left=(25*a+12.5)+"%";
+ct_m.style.left=(100/ch*(a+0.5))+"%";
 ct_m.style.backgroundImage="url('resource/"+c+"')";
 ct_m.style.backgroundPosition=d;
 ct_m.style.backgroundSize=e;
