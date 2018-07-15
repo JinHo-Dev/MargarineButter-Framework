@@ -547,10 +547,16 @@ window.open(link);
 }
 }
 
-function wH(ct,cl){
-s+= "<div id='index"+(ch++)+"' class='header'></div>"
-	+"<div class='name'>"+ct+"</div>"
-	+"<div class='highlight'>"+cl+"</div>";
+function wH(){
+s+= "<div id='index"+(ch++)+"' class='header'></div>";
+}
+
+function wH3(ct){
+s+= "<div class='name'>"+ct+"</div>";
+}
+
+function wH1(ct){
+s+= "<div class='highlight'>"+ct+"</div>";
 }
 
 function wA(ct){
@@ -663,10 +669,11 @@ goBack.style.display="none";
 goBack_u.style.display="none";
 loaded=0;
 o=setInterval(function(){checkLoad();});
-var fr=document.createElement('script');
-fr.setAttribute("type","text/javascript");
-fr.setAttribute("src",a+".margarine?"+(new Date()-0));
-document.head.appendChild(fr);
+//var fr=document.createElement('script');
+//fr.setAttribute("type","text/javascript");
+//fr.setAttribute("src",a+".margarine?"+(new Date()-0));
+//document.head.appendChild(fr);
+fromXML(a+".margarine");
 }
 
 function hashReader(){
@@ -694,20 +701,59 @@ hashReader();
 
 
 
-function fromXML(){
+function fromXML(ctx){
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
 if (this.readyState == 4 && this.status == 200) {
-myFunction(this);
+parser(this);
 }
 };
-xhttp.open("GET", "books.xml", true);
+xhttp.open("GET", ctx, true);
 xhttp.send();
 }
 
-function myFunction(xml) {
-var xmlDoc = xml.responseXML;
-document.getElementById("demo").innerHTML=xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+
+function parser(xml) {
+var parser=new DOMParser();
+var xmlDoc = parser.parseFromString(xml.responseText,"text/xml");
+var tabArr=new Array();
+if(xmlDoc.childNodes[0].getAttribute("xmlns")=="http://square.dothome.co.kr/#/margarinebutter/"){
+	for(var i=0;i<xmlDoc.childNodes[0].childNodes.length;i++){
+		if(xmlDoc.childNodes[0].childNodes[i].nodeName=="link"){
+			wL(xmlDoc.childNodes[0].childNodes[i].getAttribute("href"));
+			break;
+		}
+		else if(xmlDoc.childNodes[0].childNodes[i].nodeName=="tab"){
+			wH();
+			tabArr[tabArr.length]=[xmlDoc.childNodes[0].childNodes[i].getAttribute("name"),xmlDoc.childNodes[0].childNodes[i].getAttribute("icon")];
+			for(var j=0;j<xmlDoc.childNodes[0].childNodes[i].childNodes.length;j++){
+				if(xmlDoc.childNodes[0].childNodes[i].childNodes[j].nodeName=="h3"){
+					wH3(xmlDoc.childNodes[0].childNodes[i].childNodes[j].innerHTML);
+				}
+				else if(xmlDoc.childNodes[0].childNodes[i].childNodes[j].nodeName=="h1"){
+					wH1(xmlDoc.childNodes[0].childNodes[i].childNodes[j].innerHTML);
+				}
+				else if(xmlDoc.childNodes[0].childNodes[i].childNodes[j].nodeName=="p"){
+					wA(xmlDoc.childNodes[0].childNodes[i].childNodes[j].innerHTML);
+				}
+				else if(xmlDoc.childNodes[0].childNodes[i].childNodes[j].nodeName=="button"){
+					wB(xmlDoc.childNodes[0].childNodes[i].childNodes[j].innerHTML, xmlDoc.childNodes[0].childNodes[i].childNodes[j].getAttribute("href"));
+				}
+				else if(xmlDoc.childNodes[0].childNodes[i].childNodes[j].nodeName=="html"){
+					s+=xmlDoc.childNodes[0].childNodes[i].childNodes[j].innerHTML;
+				}
+			}
+			wF();
+		}
+	}
+	wForm();
+	if(xmlDoc.getElementsByTagName("back").length>0){
+		wBack(xmlDoc.getElementsByTagName("back")[0].getAttribute("href"),xmlDoc.getElementsByTagName("back")[0].getAttribute("icon"),"7px 7px","26px 26px");
+	}
+	for(var i=0;i<tabArr.length;i++){
+		wM(i, tabArr[i][0],  tabArr[i][1], "7px 7px","26px 26px");
+	}
+}
 }
 
 
