@@ -1,57 +1,47 @@
-﻿
-wH("Bruno Mars","Marry You");
-wA("It's a beautiful night, we're looking for something dumb to do");
-wA("Hey baby, I think I wanna marry you");
-wA("Is it the look in your eyes, or is it this dancing juice");
-wA("Who cares baby, I think I wanna marry you");
-wF();
-
-//****************************************************************************************************
-
-wH("Coldplay","In My Place");
-wA("In my place, in my place");
-wA("Were lines that I couldn't change");
-wA("I was lost, oh yeah");
-wA("I was lost, I was lost");
-wA("Crossed lines I shouldn't have crossed");
-wF();
-
-//****************************************************************************************************
-
-wH("Bruno Mars","Marry You");
-wA("It's a beautiful night, we're looking for something dumb to do");
-wA("Hey baby, I think I wanna marry you");
-wA("Is it the look in your eyes, or is it this dancing juice");
-wA("Who cares baby, I think I wanna marry you");
-wF();
-
-//****************************************************************************************************
-
-wH("Bruno Mars","Marry You");
-wA("It's a beautiful night, we're looking for something dumb to do");
-wA("Hey baby, I think I wanna marry you");
-wA("Is it the look in your eyes, or is it this dancing juice");
-wA("Who cares baby, I think I wanna marry you");
-wF();
-
-//****************************************************************************************************
-
-wH("Coldplay","In My Place");
-wA("In my place, in my place");
-wA("Were lines that I couldn't change");
-wA("I was lost, oh yeah");
-wA("I was lost, I was lost");
-wA("Crossed lines I shouldn't have crossed");
-wF();
-
-//****************************************************************************************************
-
-wForm();
-
-wBack("#index","test1.png","7px 7px","26px 26px");
-wM(0,"Home","test1.png","7px 7px","26px 26px");
-wM(1,"Book","test2.png","7px 7px","26px 26px");
-wM(2,"Star","test3.png","10px 10px","20px 20px");
-wM(3,"Flower","test4.png","7px 7px","26px 26px");
-wM(4,"Flower","test4.png","7px 7px","26px 26px");
-
+﻿<margarine xmlns="http://square.dothome.co.kr/#/margarinebutter/">
+	<back href="d" icon="icon.png" />
+	<tab name="Tab1" icon="test1.png">
+		<h3>Bruno Mars</h3>
+		<h1>Marry You</h1>
+		<p>It's a beautiful night, we're looking for something dumb to do</p>
+		<p value="Hey baby, I think I wanna marry you" />
+		<p>Is it the look in your eyes, or is it this dancing juice</p>
+		<button href="d" class="blue medium">Go Button</button>
+		<gallery duration="2s">
+			<img src="view1.png" />
+			<img src="view2.png" />
+			<img src="view3.png" />
+		</gallery>
+		<html>
+			<div>asdf</div>
+		</html>
+		<p>Who cares baby, I think I wanna marry you</p>
+	</tab>
+	<tab name="Tab1" icon="test2.png">
+		<h3>Bruno Mars</h3>
+		<h1>Marry You</h1>
+		<p>It's a beautiful night, we're looking for something dumb to do</p>
+		<p value="Hey baby, I think I wanna marry you" />
+		<p>Is it the look in your eyes, or is it this dancing juice</p>
+		<button>Go Button</button>
+		<p>Who cares baby, I think I wanna marry you</p>
+	</tab>
+	<tab name="Tab1" icon="test3.png">
+		<h3>Bruno Mars</h3>
+		<h1>Marry You</h1>
+		<p>It's a beautiful night, we're looking for something dumb to do</p>
+		<p value="Hey baby, I think I wanna marry you" />
+		<p>Is it the look in your eyes, or is it this dancing juice</p>
+		<button>Go Button</button>
+		<p>Who cares baby, I think I wanna marry you</p>
+	</tab>
+	<tab name="Tab1" icon="test4.png">
+		<h3>Bruno Mars</h3>
+		<h1>Marry You</h1>
+		<p>It's a beautiful night, we're looking for something dumb to do</p>
+		<p value="Hey baby, I think I wanna marry you" />
+		<p>Is it the look in your eyes, or is it this dancing juice</p>
+		<button>Go Button</button>
+		<p>Who cares baby, I think I wanna marry you</p>
+	</tab>
+</margarine>
