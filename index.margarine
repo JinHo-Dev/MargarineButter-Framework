@@ -1,47 +1,342 @@
 ﻿<margarine xmlns="http://square.dothome.co.kr/#/margarinebutter/">
-	<back href="d" icon="icon.png" />
-	<tab name="Tab1" icon="test1.png">
-		<h3>Bruno Mars</h3>
-		<h1>Marry You</h1>
-		<p>It's a beautiful night, we're looking for something dumb to do</p>
-		<p value="Hey baby, I think I wanna marry you" />
-		<p>Is it the look in your eyes, or is it this dancing juice</p>
-		<button href="d" class="blue medium">Go Button</button>
-		<gallery duration="2s">
-			<img src="view1.png" />
-			<img src="view2.png" />
-			<img src="view3.png" />
-		</gallery>
+	<tab name="Home" icon="home_white.png">
+		<h3>스퀘어</h3>
+		<h1>마법같이 놀라운 도구함</h1>
+		<p>
+			복잡한 일을 손쉽게 해주는 도구를 만나보세요. 
+			모든 과정이 마법처럼 느껴지고 매끄럽게 진행됩니다. 
+			이 곳, 스퀘어에서 필요한 도구를 꺼내보세요. 
+			아래로 스크롤하거나 좌측 메뉴를 선택해 도구를 살펴보세요. 
+		</p>
 		<html>
-			<div>asdf</div>
+		<![CDATA[
+			<style>
+
+.home, .silhouette, .fidelius, .jhsquare, .hexa, .logo4u, .manual, .download, .gallery, .features{
+width:40px;
+height:40px;
+margin:0px;
+}
+
+.appsquare{
+width:60px;
+height:60px;
+margin:-10px;
+}
+
+.nubilo, .jhlogo{
+width:30px;
+height:30px;
+margin:5px;
+}
+
+.filesquare{
+width:50px;
+height:50px;
+margin:-5px;
+}
+
+#silhouetteFlow img{
+margin:0px;
+padding:0px;
+width:200px;
+height:200px;
+}
+
+#silhouetteFlow div{
+transform:translateY(0px);
+animation:silhouette_demo 10s linear infinite;
+margin:0px;
+padding:0px;
+overflow:visible;
+width:200px;
+}
+
+#silhouetteFlow{
+line-height:0px;
+overflow:hidden;
+background-image:url(resource/silhouette_img0.png);
+width:200px;
+height:200px;
+margin:0px;
+padding:0px;
+}
+
+#nubiloFlow img{
+margin:0px;
+padding:0px;
+width:200px;
+height:374px;
+}
+
+#nubiloFlow div{
+opacity:0;
+transform:translateY(0px);
+animation:nubilo_demo 10s linear infinite;
+margin:0px;
+padding:0px;
+overflow:visible;
+width:200px;
+}
+
+#nubiloFlow{
+line-height:0px;
+overflow:hidden;
+background-image:url(resource/nubilo_img0.png);
+width:200px;
+height:374px;
+margin:0px;
+padding:0px;
+}
+
+#logoFlow div{
+transform:translateX(0px);
+animation:home_demo 15s linear infinite;
+margin:0px;
+padding:0px;
+overflow-x:visible;
+overflow-y:hidden;
+width:610px;
+}
+
+#logoFlow img{
+padding-left:10px;
+padding-right:10px;
+float:left;
+}
+
+#logoFlow{
+overflow:hidden;
+width:400px;
+overflow:hidden;
+}
+
+@keyframes silhouette_demo{
+0%{
+transform:translateY(0px);
+}
+20%{
+transform:translateY(0px);
+}
+25%{
+transform:translateY(-200px);
+}
+45%{
+transform:translateY(-200px);
+}
+50%{
+transform:translateY(-400px);
+}
+70%{
+transform:translateY(-400px);
+}
+75%{
+transform:translateY(-600px);
+}
+95%{
+transform:translateY(-600px);
+}
+100%{
+transform:translateY(-800px);
+}
+}
+
+@keyframes home_demo{
+0%{
+transform:translateX(0px);
+}
+50%{
+transform:translateX(-210px);
+}
+100%{
+transform:translateX(0px);
+}
+}
+
+@keyframes nubilo_demo{
+0.1%{
+opacity:0;
+transform:translateY(0px);
+}
+2%{
+opacity:1;
+transform:translateY(0px);
+}
+18%{
+opacity:1;
+transform:translateY(0px);
+}
+20%{
+opacity:0;
+transform:translateY(0px);
+}
+20.1%{
+opacity:0;
+transform:translateY(-374px);
+}
+22%{
+opacity:1;
+transform:translateY(-374px);
+}
+38%{
+opacity:1;
+transform:translateY(-374px);
+}
+40%{
+opacity:0;
+transform:translateY(-374px);
+}
+40.1%{
+opacity:0;
+transform:translateY(-748px);
+}
+42%{
+opacity:1;
+transform:translateY(-748px);
+}
+58%{
+opacity:1;
+transform:translateY(-748px);
+}
+60%{
+opacity:0;
+transform:translateY(-748px);
+}
+60.1%{
+opacity:0;
+transform:translateY(-1122px);
+}
+62%{
+opacity:1;
+transform:translateY(-1122px);
+}
+78%{
+opacity:1;
+transform:translateY(-1122px);
+}
+80%{
+opacity:0;
+transform:translateY(-1122px);
+}
+80.1%{
+opacity:0;
+transform:translateY(-1496px);
+}
+82%{
+opacity:1;
+transform:translateY(-1496px);
+}
+98%{
+opacity:1;
+transform:translateY(-1496px);
+}
+100%{
+opacity:0;
+transform:translateY(-1496px);
+}
+}
+			</style>
+			<div id='logoFlow' class='image'>
+				<div>
+					<img src='resource/home.png' class='home'>
+					<img src='resource/silhouette.png' class='silhouette'>
+					<img src='resource/nubilo.png' class='nubilo'>
+					<img src='resource/fidelius.png' class='fidelius'>
+					<img src='resource/4ulogo.png' class='logo4u'>
+					<img src='resource/jhlogo.png' class='jhlogo'>
+					<img src='resource/gallery.png' class='gallery'>
+					<img src='resource/features.png' class='features'>
+					<img src='resource/manual.png' class='manual'>
+					<img src='resource/download.png' class='download'>
+				</div>
+			</div>
+		]]>
 		</html>
-		<p>Who cares baby, I think I wanna marry you</p>
+		<p>
+			이 곳은 유용한 창고이자 도구함입니다. 
+			여기서 필요한 것을 찾아보세요. 
+			혹은 필요한 것이 있다면 알려주세요. 
+		</p>
 	</tab>
-	<tab name="Tab1" icon="test2.png">
-		<h3>Bruno Mars</h3>
-		<h1>Marry You</h1>
-		<p>It's a beautiful night, we're looking for something dumb to do</p>
-		<p value="Hey baby, I think I wanna marry you" />
-		<p>Is it the look in your eyes, or is it this dancing juice</p>
-		<button>Go Button</button>
-		<p>Who cares baby, I think I wanna marry you</p>
+	<tab name="Silhouette" icon="silhouette_white.png">
+		<h3>실루엣</h3>
+		<h1>그림을 그리는 공식</h1>
+		<p>
+			이제 수식으로 그림을 그려보세요. 
+			정확히 원하는 비율로 원하는 각도로 그려보세요. 
+			그리고 완성된 멋진 그림을 손실없이 보관하세요. 
+		</p>
+		<html>
+		<![CDATA[
+			<div id='silhouetteFlow' class='image'>
+				<div>
+					<img src='resource/silhouette_img1.png'>
+					<img src='resource/silhouette_img2.png'>
+					<img src='resource/silhouette_img3.png'>
+					<img src='resource/silhouette_img4.png'>
+					<img src='resource/silhouette_img1.png'>
+				</div>
+			</div>
+		]]>
+		</html>
+		<p>
+			아름답고 깔끔한 벡터이미지를 만들 수 있습니다. 
+			그라데이션이나 곡선같은 기본적인 기능부터 레이어와 성분복제같은 고급 기능까지 담고 있습니다. 
+			또한 스크립트로 만들어진 이미지이기에 유지보수가 간편합니다. 
+			게다가 무료입니다. 
+			지금 더 자세히 알아보세요. 
+		</p>
+		<button href="#silhouette/">자세히 알아보기</button>
 	</tab>
-	<tab name="Tab1" icon="test3.png">
-		<h3>Bruno Mars</h3>
-		<h1>Marry You</h1>
-		<p>It's a beautiful night, we're looking for something dumb to do</p>
-		<p value="Hey baby, I think I wanna marry you" />
-		<p>Is it the look in your eyes, or is it this dancing juice</p>
-		<button>Go Button</button>
-		<p>Who cares baby, I think I wanna marry you</p>
+	<tab name="Nubilo" icon="nubilo_white.png">
+		<h3>누빌로</h3>
+		<h1>판타지같은 필터</h1>
+		<p>
+			사진을 새롭게 꾸며보세요. 
+			뿌옇게 혹은 선명하게, 차분하게 아니면 활기차게 바꿔보세요. 
+			사진에 느낌과 감성을 넣어보세요. 
+		</p>
+		<html>
+		<![CDATA[
+			<div id='nubiloFlow' class='image'>
+				<div>
+					<img src='resource/nubilo_img1.png'>
+					<img src='resource/nubilo_img2.png'>
+					<img src='resource/nubilo_img3.png'>
+					<img src='resource/nubilo_img4.png'>
+					<img src='resource/nubilo_img5.png'>
+				</div>
+			</div>
+		]]>
+		</html>
+		<p>
+			누빌로는 현재 제작 중에 있습니다. 
+			베타버전을 테스트 해보거나, 필터가 적용된 사진을 미리 감상해보세요. 
+		</p>
+		<button href="#nubilo/">사진 감상하기</button>
 	</tab>
-	<tab name="Tab1" icon="test4.png">
-		<h3>Bruno Mars</h3>
-		<h1>Marry You</h1>
-		<p>It's a beautiful night, we're looking for something dumb to do</p>
-		<p value="Hey baby, I think I wanna marry you" />
-		<p>Is it the look in your eyes, or is it this dancing juice</p>
-		<button>Go Button</button>
-		<p>Who cares baby, I think I wanna marry you</p>
+	<tab name="Fidelius" icon="fidelius_white.png">
+		<h3>피델리우스</h3>
+		<h1>완벽한 비밀로 숨겨진 코드</h1>
+		<p>
+			내 소중한 코드를 안전하게 만들어보세요. 
+			다양한 암호화방식을 이용해보세요. 
+		</p>
+		<html>
+		<![CDATA[
+			<div style="background-image:url('resource/topsecret.png');height:200px;" class="image"></div>
+		]]>
+		</html>
+		<p>
+			피델리우스는 현재 계획 중에 있습니다. 
+		</p>
+	</tab>
+	<tab name="MBF" icon="home_white.png">
+		<h3>마가린버터</h3>
+		<h1>간결하고 우아한 웹의 기본</h1>
+		<p>
+			쉽고 빠르게 웹을 만들어보세요. 
+			작동이 부드럽고 빠릅니다. 
+		</p>
 	</tab>
 </margarine>
