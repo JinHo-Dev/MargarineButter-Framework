@@ -166,105 +166,6 @@ width:25%;
 bottom:0px;
 }
 
-.home, .silhouette, .fidelius, .jhsquare, .hexa, .logo4u, .manual, .download, .gallery, .features{
-width:40px;
-height:40px;
-margin:0px;
-}
-
-.appsquare{
-width:60px;
-height:60px;
-margin:-10px;
-}
-
-.nubilo, .jhlogo{
-width:30px;
-height:30px;
-margin:5px;
-}
-
-.filesquare{
-width:50px;
-height:50px;
-margin:-5px;
-}
-
-#silhouetteFlow img{
-margin:0px;
-padding:0px;
-width:200px;
-height:200px;
-}
-
-#silhouetteFlow div{
-transform:translateY(0px);
-animation:silhouette_demo 10s linear infinite;
-margin:0px;
-padding:0px;
-overflow:visible;
-width:200px;
-}
-
-#silhouetteFlow{
-line-height:0px;
-overflow:hidden;
-background-image:url(resource/silhouette_img0.png);
-width:200px;
-height:200px;
-margin:0px;
-padding:0px;
-}
-
-#nubiloFlow img{
-margin:0px;
-padding:0px;
-width:200px;
-height:374px;
-}
-
-#nubiloFlow div{
-opacity:0;
-transform:translateY(0px);
-animation:nubilo_demo 10s linear infinite;
-margin:0px;
-padding:0px;
-overflow:visible;
-width:200px;
-}
-
-#nubiloFlow{
-line-height:0px;
-overflow:hidden;
-background-image:url(resource/nubilo_img0.png);
-width:200px;
-height:374px;
-margin:0px;
-padding:0px;
-}
-
-#logoFlow div{
-transform:translateX(0px);
-animation:home_demo 15s linear infinite;
-margin:0px;
-padding:0px;
-overflow-x:visible;
-overflow-y:hidden;
-width:610px;
-}
-
-#logoFlow img{
-padding-left:10px;
-padding-right:10px;
-float:left;
-}
-
-#logoFlow{
-overflow:hidden;
-width:400px;
-overflow:hidden;
-}
-
 #loadCover{
 transition-duration:0.3s;
 position:fixed;
@@ -712,7 +613,7 @@ xhttp.open("GET", ctx, true);
 xhttp.send();
 }
 
-
+var aaa;
 function parser(xml) {
 var parser=new DOMParser();
 var xmlDoc = parser.parseFromString(xml.responseText,"text/xml");
@@ -740,7 +641,7 @@ if(xmlDoc.childNodes[0].getAttribute("xmlns")=="http://square.dothome.co.kr/#/ma
 					wB(xmlDoc.childNodes[0].childNodes[i].childNodes[j].innerHTML, xmlDoc.childNodes[0].childNodes[i].childNodes[j].getAttribute("href"));
 				}
 				else if(xmlDoc.childNodes[0].childNodes[i].childNodes[j].nodeName=="html"){
-					s+=xmlDoc.childNodes[0].childNodes[i].childNodes[j].innerHTML;
+					s+=xmlDoc.childNodes[0].childNodes[i].childNodes[j].childNodes[0].wholeText;
 				}
 			}
 			wF();
