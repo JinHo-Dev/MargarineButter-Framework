@@ -570,11 +570,7 @@ goBack.style.display="none";
 goBack_u.style.display="none";
 loaded=0;
 o=setInterval(function(){checkLoad();});
-//var fr=document.createElement('script');
-//fr.setAttribute("type","text/javascript");
-//fr.setAttribute("src",a+".margarine?"+(new Date()-0));
-//document.head.appendChild(fr);
-fromXML(a+".margarine");
+fromXML(a);
 }
 
 function hashReader(){
@@ -588,7 +584,8 @@ function hashReader(){
 		}
 	}
 	else{
-		location.hash="/"+location.hash.substr(1);
+		history.replaceState(undefined, undefined, "#/"+location.hash.substr(1));
+		hashReader();
 	}
 }
 
@@ -603,14 +600,33 @@ hashReader();
 
 
 function fromXML(ctx){
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-if (this.readyState == 4 && this.status == 200) {
-parser(this);
-}
-};
-xhttp.open("GET", ctx, true);
-xhttp.send();
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if ( this.readyState == 4 && this.status == 200 ){
+			if(this.responseURL.search(/\.margarine\?\d+$/gi)>-1 ){
+				parser(this);
+			}
+			else{
+				clearInterval(o);
+				if(location.hash.substr(-1)!="/"){
+					history.replaceState(undefined, undefined, location.hash+"/");
+					hashReader();
+				}
+				else if(location.hash.substr(0,location.hash.length-1).lastIndexOf("/")>1){
+					history.replaceState(undefined, undefined, location.hash.substr( 0 , location.hash.substr(0,location.hash.length-1).lastIndexOf("/") ));
+					hashReader();
+				}
+				else if(location.hash!="#/"){
+					history.replaceState(undefined, undefined, "#/");
+					hashReader();
+				}
+			}
+		}
+		else{
+		}
+	};
+	xhttp.open("GET", ctx+".margarine?"+(new Date()-0), true);
+	xhttp.send();
 }
 
 var aaa;
