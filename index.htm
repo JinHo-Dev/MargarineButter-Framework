@@ -481,6 +481,7 @@ body {
 
 	function wA(ct) {
 		s += "<div class='article'>" + ct + "</div>";
+		wS();
 	}
 
 	function wS() {
@@ -490,6 +491,7 @@ body {
 	function wB(ct, cl) {
 		s += "<div class='button' onclick=\"goTo('" + cl + "')\">" + ct
 				+ "</div>";
+		wS();
 	}
 
 	function wF(ct) {
@@ -691,6 +693,7 @@ body {
 											.getAttribute("href"));
 						} else if (xmlDoc.childNodes[0].childNodes[i].childNodes[j].nodeName == "html") {
 							s += xmlDoc.childNodes[0].childNodes[i].childNodes[j].childNodes[0].wholeText;
+							wS();
 						}
 					}
 					wF();
