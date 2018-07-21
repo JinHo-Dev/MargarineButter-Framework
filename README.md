@@ -29,11 +29,8 @@ It takes up little of server storage and of course, uses small amount of traffic
 To users who surfing your website around, It shows web faster and less laggy. 
 
 # Installation
-1. Get bianry files
+1. Start Server
 2. Open index.htm with web browser (recommend Chrome)
-
-# API Reference
-Later some explanation about functions will be added. 
 
 # Version History
 * v1.0 (2018.07.11)
