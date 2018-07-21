@@ -3,7 +3,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="viewport"
+	content="minimal-ui, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <meta charset="utf-8">
 <meta name="Location" content="Daejeon in South Korea">
 <meta name="Generator" content="notepad">
@@ -11,671 +12,701 @@
 <meta HTTP-EQUIV='Cache-Control' CONTENT='no-cache'>
 <meta HTTP-EQUIV='Pragma' CONTENT='no-cache'>
 <meta name="Author" content="GODJH">
-<meta name="Copyright" content="(c)2010-2014 ShinJinHo. All Rights Reserved.">
+<meta name="Copyright"
+	content="(c)2010-2014 ShinJinHo. All Rights Reserved.">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-status-bar-style"
+	content="black-translucent">
 <meta name="format-detection" content="telephone=no">
 <meta name="apple-mobile-web-app-title" content="Hexa Studio">
 <title>MargarineButter Framework</title>
 <style>
-
-::selection{
-background-color:#09f;
-color:white;
+::selection {
+	background-color: #09f;
+	color: white;
 }
 
-a:link,a:visited,a:active,a:hover{
-text-decoration:none;
+a:link, a:visited, a:active, a:hover {
+	text-decoration: none;
 }
 
-::-webkit-scrollbar{ 
-display:none;
+::-webkit-scrollbar {
+	display: none;
 }
 
-*{
-font-family:'sf','sd',sans-serif;
--webkit-tap-highlight-color:rgba(0,0,0,0);
--webkit-touch-callout:none;
--webkit-appearance:none;
--webkit-user-select:none;
-outline:none;
-appearance:none;
+* {
+	font-family: 'sf', 'sd', sans-serif;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-touch-callout: none;
+	-webkit-appearance: none;
+	-webkit-user-select: none;
+	outline: none;
+	appearance: none;
 }
 
-body{
-margin:0px;
-padding:0px;
-border:none;
+body {
+	margin: 0px;
+	padding: 0px;
+	border: none;
 }
 
-.footer{
-cursor:default;
-width:40px;
-height:100px;
+.footer {
+	cursor: default;
+	width: 40px;
+	height: 100px;
 }
 
-.header{
-cursor:default;
-width:60px;
-height:60px;
+.header {
+	cursor: default;
+	width: 60px;
+	height: 60px;
 }
 
-.name{
-cursor:default;
-width:100px;
-height:30px;
-line-height:30px;
-text-align:center;
-font-size:16px;
+.name {
+	cursor: default;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 16px;
 }
 
-.highlight{
-cursor:default;
-width:400px;
-height:80px;
-line-height:80px;
-text-align:center;
-font-size:32px;
+.highlight {
+	cursor: default;
+	width: 400px;
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	font-size: 32px;
 }
 
-.article{
-cursor:default;
-width:400px;
-line-height:30px;
-text-align:center;
-font-size:16px;
-word-break:keep-all;
+.article {
+	cursor: default;
+	width: 400px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 16px;
+	word-break: keep-all;
 }
 
-.space{
-cursor:default;
-width:40px;
-height:40px;
+.space {
+	cursor: default;
+	width: 40px;
+	height: 40px;
 }
 
-.image{
-cursor:default;
-width:100%;
-background-repeat:no-repeat;
-background-size:auto 100%;
-background-position:center;
+.image {
+	cursor: default;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	background-position: center;
 }
 
-.button{
-border-radius:4px;
-cursor:pointer;
-width:160px;
-height:40px;
-line-height:40px;
-text-align:center;
-font-size:16px;
-background:#09f;
-border:0px solid #09f;
-color:#fff;
+.button {
+	border-radius: 4px;
+	cursor: pointer;
+	width: 160px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 16px;
+	background: #09f;
+	border: 0px solid #09f;
+	color: #fff;
 }
 
-.menu{
-transition-duration:0.3s;
-position:absolute;
-border-radius:4px;
-left:0px;
-width:100%;
-height:40px;
-background-color:#fff;
-color:#aaa;
-text-align:center;
-line-height:44px;
-font-size:16px;
-background-repeat:no-repeat;
-cursor:default;
+.menu {
+	transition-duration: 0.3s;
+	position: absolute;
+	border-radius: 4px;
+	left: 0px;
+	width: 100%;
+	height: 40px;
+	background-color: #fff;
+	color: #aaa;
+	text-align: center;
+	line-height: 44px;
+	font-size: 16px;
+	background-repeat: no-repeat;
+	cursor: default;
 }
 
-.menu_m{
-transition-duration:0.3s;
-position:absolute;
-border-radius:4px;
-left:0px;
-top:10px;
-margin-left:-20px;
-width:40px;
-height:40px;
-color:#aaa;
-text-align:center;
-line-height:44px;
-font-size:16px;
-background-repeat:no-repeat;
-cursor:default;
-transform:scale(1.3);
+.menu_m {
+	transition-duration: 0.3s;
+	position: absolute;
+	border-radius: 4px;
+	left: 0px;
+	top: 6px;
+	margin-left: -20px;
+	width: 40px;
+	height: 40px;
+	color: #aaa;
+	text-align: center;
+	line-height: 44px;
+	font-size: 16px;
+	background-repeat: no-repeat;
+	cursor: default;
+	transform: scale(1.3);
 }
 
-.clickable{
-cursor:pointer;
-background-color:rgba(0,0,0,0);
-height:52px;
-position:absolute;
-width:100%;
-margin-top:-10px;
+.clickable {
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0);
+	height: 52px;
+	position: absolute;
+	width: 100%;
+	margin-top: -10px;
 }
 
-.clickable_m{
-cursor:pointer;
-background-color:rgba(0,0,0,0);
-height:52px;
-position:absolute;
-width:20%;
-bottom:0px;
+.clickable_m {
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0);
+	height: 52px;
+	position: absolute;
+	width: 20%;
+	bottom: 0px;
 }
 
-#loadCover{
-transition-duration:0.3s;
-position:fixed;
-top:0px;
-left:0px;
-height:100%;
-width:100%;
-background:#fff;
-z-index:999;
+#loadCover {
+	transition-duration: 0.3s;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	background: #fff;
+	z-index: 999;
 }
 
-#oldBrowser{
-display:none;
-position:absolute;
-top:0px;
-left:0px;
-height:100%;
-width:100%;
-background:#fff;
-z-index:999;
+#oldBrowser {
+	display: none;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	background: #fff;
+	z-index: 999;
 }
 
-#oldBrowser img{
-position:absolute;
-top:40px;
-left:40px;
+#oldBrowser img {
+	position: absolute;
+	top: 40px;
+	left: 40px;
 }
 
-#oldBrowser div{
-cursor:default;
-font-size:14px;
-color:#aaa;
-position:absolute;
-top:150px;
-left:150px;
-height:40px;
-line-height:30px;
+#oldBrowser div {
+	cursor: default;
+	font-size: 14px;
+	color: #aaa;
+	position: absolute;
+	top: 150px;
+	left: 150px;
+	height: 40px;
+	line-height: 30px;
 }
 
-#oldBrowser #oldTitle{
-cursor:default;
-font-size:20px;
-color:#00a;
-position:absolute;
-top:60px;
-left:150px;
-height:40px;
-line-height:40px;
+#oldBrowser #oldTitle {
+	cursor: default;
+	font-size: 20px;
+	color: #00a;
+	position: absolute;
+	top: 60px;
+	left: 150px;
+	height: 40px;
+	line-height: 40px;
 }
 
-#menuLine{
-position:fixed;top:60px;
-left:200px;
-width:1px;
-height:calc(100% - 120px);
-background-image:url(resource/line.png);
-background-size:2px 1px;
-background-position:0px 0px;
-background-repeat:repeat-y;
+#menuLine {
+	position: fixed;
+	top: 60px;
+	left: 200px;
+	width: 1px;
+	height: calc(100% - 120px);
+	background-image: url(resource/line.png);
+	background-size: 2px 1px;
+	background-position: 0px 0px;
+	background-repeat: repeat-y;
 }
 
-#menuSelect{
-position:fixed;
-top:0px;
-left:20px;
-width:160px;
-height:0px;
+#menuSelect {
+	position: fixed;
+	top: 0px;
+	left: 20px;
+	width: 160px;
+	height: 0px;
 }
 
-#menuSelect_m{
-position:fixed;
-bottom:0px;
-left:0px;
-width:100%;
-height:52px;
-background:black;
+#menuSelect_m {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 52px;
+	background: black;
 }
 
-#article{
-display:none;
-transform-origin:50% 0px;
-position:absolute;top:0px;
-left:201px;
-width:calc(100% - 201px);
-font-size:16px;
+#article {
+	display: none;
+	transform-origin: 50% 0px;
+	position: absolute;
+	top: 0px;
+	left: 201px;
+	width: calc(100% - 201px);
+	font-size: 16px;
 }
 
-#goBack{
-display:none;
-cursor:pointer;
-border-radius:100%;
-left:80px;
-width:40px;
-height:40px;
-position:fixed;
-background-color:rgba(0,0,0,0);
-transition-duration:0s;
+#goBack {
+	display: none;
+	cursor: pointer;
+	border-radius: 100%;
+	left: 80px;
+	width: 40px;
+	height: 40px;
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0);
+	transition-duration: 0s;
 }
 
-#goBack_u{
-cursor:pointer;
-left:80px;
-border-top-left-radius:20px;
-border-top-right-radius:20px;
-border-bottom-right-radius:20px;
-border-bottom-left-radius:4px;
-transform:rotate(45deg);
-margin-left:0px;
-width:40px;
-height:40px;
-position:fixed;
-background-color:#aaa;
-transition-duration:0s;
+#goBack_u {
+	cursor: pointer;
+	left: 80px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 4px;
+	transform: rotate(45deg);
+	margin-left: 0px;
+	width: 40px;
+	height: 40px;
+	position: fixed;
+	background-color: #aaa;
+	transition-duration: 0s;
 }
-
-
 </style>
-<body link="black" vlink="black" alink="black" bgcolor="white" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+<body link="black" vlink="black" alink="black" bgcolor="white"
+	oncontextmenu="return false" ondragstart="return false"
+	onselectstart="return false">
 
-<div id="loadCover"></div>
+	<div id="loadCover"></div>
 
-<div id="oldBrowser">
-<img width=80 height=80 src="resource/alert.png">
-<div id="oldTitle">페이지를 표시하고 싶지 않습니다 </div>
-<div>
-이 웹브라우저는 페이지를 올바르게 표현하지 못합니다. <br>
-정성들여 만들어진 페이지이므로 함부로 표현되고 싶지 않습니다. <br>
-최신 웹브라우저를 이용해주세요. <br>
-구글 크롬을 추천합니다. 
-</div>
-</div>
+	<div id="oldBrowser">
+		<img width=80 height=80 src="resource/alert.png">
+		<div id="oldTitle">페이지를 표시하고 싶지 않습니다</div>
+		<div>
+			이 웹브라우저는 페이지를 올바르게 표현하지 못합니다. <br> 정성들여 만들어진 페이지이므로 함부로 표현되고 싶지
+			않습니다. <br> 최신 웹브라우저를 이용해주세요. <br> 구글 크롬을 추천합니다.
+		</div>
+	</div>
 
-<div id="menuLine"></div>
+	<div id="menuLine"></div>
 
-<div id="goBack_u" class="menu"></div>
-<div id="goBack" class="menu"></div>
+	<div id="goBack_u" class="menu"></div>
+	<div id="goBack" class="menu"></div>
 
-<div id="menuSelect"></div>
-<div id="article"><center></center></div>
-<div id="menuSelect_m"></div>
+	<div id="menuSelect"></div>
+	<div id="article">
+		<center></center>
+	</div>
+	<div id="menuSelect_m"></div>
 
-<iframe name="iframeA" id="iframeA" src="about:blank" style="background:white;position:fixed;border:none;width:100%;height:100%;margin:0;padding:0;"></iframe>
+	<iframe name="iframeA" id="iframeA" src="about:blank"
+		style="background: white; position: fixed; border: none; width: 100%; height: 100%; margin: 0; padding: 0;"></iframe>
 </body>
 <script langauge="JavaScript">
-var loaded=0;
+	var loaded = 0;
 
-var k=0;
-var l=0;
-var m=0;
-var n=0;
-var o=0;
-var p=0;
-var v=0;
-var h=0;
-var ch=0;
+	var k = 0;
+	var l = 0;
+	var m = 0;
+	var n = 0;
+	var o = 0;
+	var p = 0;
+	var v = 0;
+	var h = 0;
+	var ch = 0;
 
-function menu(num){
-n=num;
-clearInterval(o);
-p=new Date()-0;
-l=window.scrollY;
-k=0;
-h=(document.body.scrollHeight|document.documentElement.scrollHeight) * m_scl;
-v=Math.abs(document.getElementById('index'+n).offsetTop * m_scl - window.scrollY)/0.3;
-o=setInterval(function(){
-var q=new Date()-0;
-k+=(q-p)/1000;
-if(k>5){
-window.scrollTo(window.scrollX,document.getElementById('index'+n).offsetTop * m_scl);
-clearInterval(o);
-}
-else if(n==ch-1&&h-window.scrollY-window.innerHeight * m_scl<10){
-clearInterval(o);
-}
-else if(window.scrollY-document.getElementById('index'+n).offsetTop * m_scl>4){
-l-=(q-p)/1000*v;
-if(l<=document.getElementById('index'+n).offsetTop * m_scl){
-window.scrollTo(window.scrollX,document.getElementById('index'+n).offsetTop * m_scl);
-}
-else{
-window.scrollTo(window.scrollX,l);
-}
-}
-else if(window.scrollY-document.getElementById('index'+n).offsetTop * m_scl<-4){
-l+=(q-p)/1000*v;
-if(l>=document.getElementById('index'+n).offsetTop * m_scl){
-window.scrollTo(window.scrollX,document.getElementById('index'+n).offsetTop * m_scl);
-}
-else{
-window.scrollTo(window.scrollX,l);
-}
-}
-else{
-window.scrollTo(window.scrollX,document.getElementById('index'+n).offsetTop * m_scl);
-clearInterval(o);
-}
-p=q;
-});
-}
-
-window.onscroll=scr;
-function scr(){
-h=(document.body.scrollHeight|document.documentElement.scrollHeight);
-m=-1;
-if(ch>0){
-if(!(article.offsetHeight>0)){
-m=0;
-}
-else if(document.getElementById("index"+(ch-1)).offsetTop<=window.scrollY+window.innerHeight/3||h-window.scrollY-window.innerHeight<10){
-m=ch-1;
-}
-else{
-for(var i=ch-2;i>=0&&m==-1;i--){
-if(document.getElementById("index"+i).offsetTop<=window.scrollY+window.innerHeight/3){
-m=i;
-}
-}
-}
-}
-for(var i=0;i<ch;i++){
-document.getElementById("menu"+i).style.backgroundColor='#fff';
-document.getElementById("menu"+i).style.color='#aaa';
-}
-if(ch>0){
-document.getElementById('menu'+m).style.backgroundColor='#09f';
-document.getElementById('menu'+m).style.color='#fff';
-}
-}
-
-var m_scl=1;
-window.onresize=function(){
-if(window.innerWidth<410){
-m_scl=window.innerWidth/410;
-article.style.transform="scale("+m_scl+")";
-}
-else{
-article.style.transform="";
-m_scl=1;
-}
-if(window.innerWidth<640){
-goBack.style.left='-50px';
-goBack_u.style.left='-50px';
-menuLine.style.display='none';
-menuSelect.style.display='none';
-menuSelect_m.style.display='block';
-article.style.left="calc(50% - 200px)";
-article.style.width="400px";
-}
-else{
-goBack.style.left='80px';
-goBack_u.style.left='80px';
-menuLine.style.display='block';
-menuSelect.style.display='block';
-menuSelect_m.style.display='none';
-article.style.left="201px";
-article.style.width="calc(100% - 201px)";
-}
-}
-
-window.onload=function(){
-if(window.innerWidth>0&&typeof(loadCover.offsetTop)=="number"&&typeof(loadCover.style.borderRadius)=="string"&&typeof(loadCover.style.transform)=="string"){
-}
-else{
-oldBrowser.style.display="block";
-}
-}
-
-function goTo(link){
-if(link.substr(0,2)=="#/"){
-loadCover.style.opacity=0.01;
-loadCover.style.display="block";
-location.hash=link.substr(1);
-setTimeout(function(){loadCover.style.opacity=1;window.scrollTo(0,0)},10);
-}
-else if(link.substr(0,1)=="#"){
-loadCover.style.opacity=0.01;
-loadCover.style.display="block";
-location.hash="/"+link.substr(1);
-setTimeout(function(){loadCover.style.opacity=1;window.scrollTo(0,0)},10);
-}
-else{
-window.open(link);
-}
-}
-
-function wH(){
-s+= "<div id='index"+(ch++)+"' class='header'></div>";
-}
-
-function wH3(ct){
-s+= "<div class='name'>"+ct+"</div>";
-}
-
-function wH1(ct){
-s+= "<div class='highlight'>"+ct+"</div>";
-}
-
-function wA(ct){
-s+= "<div class='article'>"+ct+"</div>";
-}
-
-function wS(){
-s+= "<div class='space'></div>";
-}
-
-function wB(ct,cl){
-s+= "<div class='button' onclick=\"goTo('"+cl+"')\">"+ct+"</div>";
-}
-
-function wF(ct){
-s+= "<div class='footer'></div>";
-}
-
-function wL(ct){
-if(loaded==0){
-loaded=1;
-setTimeout(function(){loadCover.style.opacity=0;},10);
-setTimeout(function(){loadCover.style.display='none';},310);
-}
-document.getElementById("iframeA").style.display="";
-iframeA.location.replace(ct);
-}
-
-function wForm(){
-if(loaded==0){
-loaded=1;
-}
-var ct=s;
-var sv='';
-var sv_m='';
-for(var i=0;i<ch;i++){
-sv+="<div id='menu"+i+"' style='top:"+(60*i)+"px;' class='menu'></div>";
-sv_m+="<div id='menu"+i+"_m' style='left:"+(60*i)+"px;' class='menu_m'></div>";
-}
-for(var i=0;i<ch;i++){
-sv+="<div onclick='menu("+i+")' onmousedown='menu("+i+")' style='top:"+(60*i)+"px;' class='clickable'></div>";
-sv_m+="<div onclick='menu("+i+")' onmousedown='menu("+i+")' style='left:"+(100/ch*i)+"%;' class='clickable_m'></div>";
-}
-menuSelect.innerHTML=sv;
-menuSelect_m.innerHTML=sv_m;
-menuSelect.style.height=(60*ch-20)+"px";
-menuSelect.style.top="calc(50% - "+(60*ch-20)/2+"px)";
-article.getElementsByTagName('center')[0].innerHTML=ct;
-
-setTimeout(function(){loadCover.style.opacity=0;},10);
-setTimeout(function(){loadCover.style.display='none';},310);
-}
-
-function wM(a,b,c,d,e){
-var ct=document.getElementById("menu"+a);
-ct.innerHTML=b;
-ct.style.backgroundImage="url('resource/"+c+"')";
-ct.style.backgroundPosition=d;
-ct.style.backgroundSize=e;
-var ct_m=document.getElementById("menu"+a+"_m");
-ct_m.style.left=(100/ch*(a+0.5))+"%";
-ct_m.style.backgroundImage="url('resource/"+c+"')";
-ct_m.style.backgroundPosition=d;
-ct_m.style.backgroundSize=e;
-}
-
-function wBack(a,b,c,d){
-goBack.style.display="block";
-goBack_u.style.display="block";
-goBack.style.backgroundImage="url('resource/"+b+"')";
-goBack.style.backgroundPosition=c;
-goBack.style.backgroundSize=d;
-goBack.style.top="calc(25% - "+(60*ch-20)/4+"px - 20px)";
-goBack_u.style.top="calc(25% - "+(60*ch-20)/4+"px - 20px)";
-goBack.onclick=function(){goTo(a);}
-}
-
-var s='';
-
-function checkLoad(){
-var arr=document.getElementsByClassName("preload");
-var chk=1;
-if(loaded==0&&s.length<=0){
-chk=0;
-}
-for(var i=0;i<arr.length;i++){
-if(arr[i].complete==true){
-}
-else if(chk==0){
-break;
-}
-else{
-chk=0;
-break;
-}
-}
-if(chk==1){
-//loadContent();
-s='';
-article.style.display="block";
-clearInterval(o);
-window.onscroll();
-window.onresize();
-}
-}
-
-function dataJS(a){
-ch=0;
-goBack.style.display="none";
-goBack_u.style.display="none";
-loaded=0;
-o=setInterval(function(){checkLoad();});
-fromXML(a);
-}
-
-function hashReader(){
-	document.getElementById("iframeA").style.display="none";
-	if(location.hash.substr(0,2)=="#/"){
-		if(location.hash.substr(-1)=="/"){
-			dataJS(location.hash.substr(2)+"index");
-		}
-		else{
-			dataJS(location.hash.substr(2));
-		}
-	}
-	else{
-		history.replaceState(undefined, undefined, "#/"+location.hash.substr(1));
-		hashReader();
-	}
-}
-
-window.onhashchange=hashReader;
-
-hashReader();
-
-
-
-
-
-
-
-function fromXML(ctx){
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
-		if ( this.readyState == 4 && this.status == 200 ){
-			if(this.responseURL.search(/\.margarine\?\d+$/gi)>-1 ){
-				parser(this);
-			}
-			else{
+	function menu(num) {
+		n = num;
+		clearInterval(o);
+		p = new Date() - 0;
+		l = window.scrollY;
+		k = 0;
+		h = (document.body.scrollHeight | document.documentElement.scrollHeight)
+				* m_scl;
+		v = Math.abs(document.getElementById('index' + n).offsetTop * m_scl
+				- window.scrollY) / 0.3;
+		o = setInterval(function() {
+			var q = new Date() - 0;
+			k += (q - p) / 1000;
+			if (k > 5) {
+				window.scrollTo(window.scrollX, document.getElementById('index'
+						+ n).offsetTop
+						* m_scl);
 				clearInterval(o);
-				if(location.hash.substr(-1)!="/"){
-					history.replaceState(undefined, undefined, location.hash+"/");
-					hashReader();
+			} else if (n == ch - 1
+					&& h - window.scrollY - window.innerHeight * m_scl < 10) {
+				clearInterval(o);
+			} else if (window.scrollY
+					- document.getElementById('index' + n).offsetTop * m_scl > 4) {
+				l -= (q - p) / 1000 * v;
+				if (l <= document.getElementById('index' + n).offsetTop * m_scl) {
+					window.scrollTo(window.scrollX, document
+							.getElementById('index' + n).offsetTop
+							* m_scl);
+				} else {
+					window.scrollTo(window.scrollX, l);
 				}
-				else if(location.hash.substr(0,location.hash.length-1).lastIndexOf("/")>1){
-					history.replaceState(undefined, undefined, location.hash.substr( 0 , location.hash.substr(0,location.hash.length-1).lastIndexOf("/") ));
-					hashReader();
+			} else if (window.scrollY
+					- document.getElementById('index' + n).offsetTop * m_scl < -4) {
+				l += (q - p) / 1000 * v;
+				if (l >= document.getElementById('index' + n).offsetTop * m_scl) {
+					window.scrollTo(window.scrollX, document
+							.getElementById('index' + n).offsetTop
+							* m_scl);
+				} else {
+					window.scrollTo(window.scrollX, l);
 				}
-				else if(location.hash!="#/"){
-					history.replaceState(undefined, undefined, "#/");
-					hashReader();
+			} else {
+				window.scrollTo(window.scrollX, document.getElementById('index'
+						+ n).offsetTop
+						* m_scl);
+				clearInterval(o);
+			}
+			p = q;
+		});
+	}
+
+	window.onscroll = scr;
+	function scr() {
+		h = (document.body.scrollHeight | document.documentElement.scrollHeight);
+		m = -1;
+		if (ch > 0) {
+			if (!(article.offsetHeight > 0)) {
+				m = 0;
+			} else if (document.getElementById("index" + (ch - 1)).offsetTop <= window.scrollY
+					+ window.innerHeight / 3
+					|| h - window.scrollY - window.innerHeight < 10) {
+				m = ch - 1;
+			} else {
+				for (var i = ch - 2; i >= 0 && m == -1; i--) {
+					if (document.getElementById("index" + i).offsetTop <= window.scrollY
+							+ window.innerHeight / 3) {
+						m = i;
+					}
 				}
 			}
 		}
-		else{
+		for (var i = 0; i < ch; i++) {
+			document.getElementById("menu" + i).style.backgroundColor = '#fff';
+			document.getElementById("menu" + i).style.color = '#aaa';
 		}
-	};
-	xhttp.open("GET", ctx+".margarine?"+(new Date()-0), true);
-	xhttp.send();
-}
+		if (ch > 0) {
+			document.getElementById('menu' + m).style.backgroundColor = '#09f';
+			document.getElementById('menu' + m).style.color = '#fff';
+		}
+	}
 
-var aaa;
-function parser(xml) {
-var parser=new DOMParser();
-var xmlDoc = parser.parseFromString(xml.responseText,"text/xml");
-var tabArr=new Array();
-if(xmlDoc.childNodes[0].getAttribute("xmlns")=="http://square.dothome.co.kr/#/margarinebutter/"){
-	for(var i=0;i<xmlDoc.childNodes[0].childNodes.length;i++){
-		if(xmlDoc.childNodes[0].childNodes[i].nodeName=="link"){
-			wL(xmlDoc.childNodes[0].childNodes[i].getAttribute("href"));
-			break;
+	var m_scl = 1;
+	window.onresize = function() {
+		if (window.innerWidth < 410) {
+			m_scl = window.innerWidth / 410;
+			article.style.transform = "scale(" + m_scl + ")";
+		} else {
+			article.style.transform = "";
+			m_scl = 1;
 		}
-		else if(xmlDoc.childNodes[0].childNodes[i].nodeName=="tab"){
-			wH();
-			tabArr[tabArr.length]=[xmlDoc.childNodes[0].childNodes[i].getAttribute("name"),xmlDoc.childNodes[0].childNodes[i].getAttribute("icon")];
-			for(var j=0;j<xmlDoc.childNodes[0].childNodes[i].childNodes.length;j++){
-				if(xmlDoc.childNodes[0].childNodes[i].childNodes[j].nodeName=="h3"){
-					wH3(xmlDoc.childNodes[0].childNodes[i].childNodes[j].innerHTML);
+		if (window.innerWidth < 640) {
+			goBack.style.left = '-50px';
+			goBack_u.style.left = '-50px';
+			menuLine.style.display = 'none';
+			menuSelect.style.display = 'none';
+			menuSelect_m.style.display = 'block';
+			article.style.left = "calc(50% - 200px)";
+			article.style.width = "400px";
+		} else {
+			goBack.style.left = '80px';
+			goBack_u.style.left = '80px';
+			menuLine.style.display = 'block';
+			menuSelect.style.display = 'block';
+			menuSelect_m.style.display = 'none';
+			article.style.left = "201px";
+			article.style.width = "calc(100% - 201px)";
+		}
+	}
+
+	window.onload = function() {
+		if (window.innerWidth > 0 && typeof (loadCover.offsetTop) == "number"
+				&& typeof (loadCover.style.borderRadius) == "string"
+				&& typeof (loadCover.style.transform) == "string") {
+		} else {
+			oldBrowser.style.display = "block";
+		}
+	}
+
+	function goTo(link) {
+		if (link.substr(0, 2) == "#/") {
+			loadCover.style.opacity = 0.01;
+			loadCover.style.display = "block";
+			location.hash = link.substr(1);
+			setTimeout(function() {
+				loadCover.style.opacity = 1;
+				window.scrollTo(0, 0)
+			}, 10);
+		} else if (link.substr(0, 1) == "#") {
+			loadCover.style.opacity = 0.01;
+			loadCover.style.display = "block";
+			location.hash = "/" + link.substr(1);
+			setTimeout(function() {
+				loadCover.style.opacity = 1;
+				window.scrollTo(0, 0)
+			}, 10);
+		} else {
+			window.open(link);
+		}
+	}
+
+	function wH() {
+		s += "<div id='index" + (ch++) + "' class='header'></div>";
+	}
+
+	function wH3(ct) {
+		s += "<div class='name'>" + ct + "</div>";
+	}
+
+	function wH1(ct) {
+		s += "<div class='highlight'>" + ct + "</div>";
+	}
+
+	function wA(ct) {
+		s += "<div class='article'>" + ct + "</div>";
+	}
+
+	function wS() {
+		s += "<div class='space'></div>";
+	}
+
+	function wB(ct, cl) {
+		s += "<div class='button' onclick=\"goTo('" + cl + "')\">" + ct
+				+ "</div>";
+	}
+
+	function wF(ct) {
+		s += "<div class='footer'></div>";
+	}
+
+	function wL(ct) {
+		if (loaded == 0) {
+			loaded = 1;
+			setTimeout(function() {
+				loadCover.style.opacity = 0;
+			}, 10);
+			setTimeout(function() {
+				loadCover.style.display = 'none';
+			}, 310);
+		}
+		document.getElementById("iframeA").style.display = "";
+		iframeA.location.replace(ct);
+	}
+
+	function wForm() {
+		if (loaded == 0) {
+			loaded = 1;
+		}
+		var ct = s;
+		var sv = '';
+		var sv_m = '';
+		for (var i = 0; i < ch; i++) {
+			sv += "<div id='menu" + i + "' style='top:" + (60 * i)
+					+ "px;' class='menu'></div>";
+			sv_m += "<div id='menu" + i + "_m' style='left:" + (60 * i)
+					+ "px;' class='menu_m'></div>";
+		}
+		for (var i = 0; i < ch; i++) {
+			sv += "<div onclick='menu(" + i + ")' onmousedown='menu(" + i
+					+ ")' style='top:" + (60 * i)
+					+ "px;' class='clickable'></div>";
+			sv_m += "<div onclick='menu(" + i + ")' onmousedown='menu(" + i
+					+ ")' style='left:" + (100 / ch * i)
+					+ "%;' class='clickable_m'></div>";
+		}
+		menuSelect.innerHTML = sv;
+		menuSelect_m.innerHTML = sv_m;
+		menuSelect.style.height = (60 * ch - 20) + "px";
+		menuSelect.style.top = "calc(50% - " + (60 * ch - 20) / 2 + "px)";
+		article.getElementsByTagName('center')[0].innerHTML = ct;
+
+		setTimeout(function() {
+			loadCover.style.opacity = 0;
+		}, 10);
+		setTimeout(function() {
+			loadCover.style.display = 'none';
+		}, 310);
+	}
+
+	function wM(a, b, c, d, e) {
+		var ct = document.getElementById("menu" + a);
+		ct.innerHTML = b;
+		ct.style.backgroundImage = "url('resource/" + c + "')";
+		ct.style.backgroundPosition = d;
+		ct.style.backgroundSize = e;
+		var ct_m = document.getElementById("menu" + a + "_m");
+		ct_m.style.left = (100 / ch * (a + 0.5)) + "%";
+		ct_m.style.backgroundImage = "url('resource/" + c + "')";
+		ct_m.style.backgroundPosition = d;
+		ct_m.style.backgroundSize = e;
+	}
+
+	function wBack(a, b, c, d) {
+		goBack.style.display = "block";
+		goBack_u.style.display = "block";
+		goBack.style.backgroundImage = "url('resource/" + b + "')";
+		goBack.style.backgroundPosition = c;
+		goBack.style.backgroundSize = d;
+		goBack.style.top = "calc(25% - " + (60 * ch - 20) / 4 + "px - 20px)";
+		goBack_u.style.top = "calc(25% - " + (60 * ch - 20) / 4 + "px - 20px)";
+		goBack.onclick = function() {
+			goTo(a);
+		}
+	}
+
+	var s = '';
+
+	function checkLoad() {
+		var arr = document.getElementsByClassName("preload");
+		var chk = 1;
+		if (loaded == 0 && s.length <= 0) {
+			chk = 0;
+		}
+		for (var i = 0; i < arr.length; i++) {
+			if (arr[i].complete == true) {
+			} else if (chk == 0) {
+				break;
+			} else {
+				chk = 0;
+				break;
+			}
+		}
+		if (chk == 1) {
+			//loadContent();
+			s = '';
+			article.style.display = "block";
+			clearInterval(o);
+			window.onscroll();
+			window.onresize();
+		}
+	}
+
+	function dataJS(a) {
+		ch = 0;
+		goBack.style.display = "none";
+		goBack_u.style.display = "none";
+		loaded = 0;
+		o = setInterval(function() {
+			checkLoad();
+		});
+		fromXML(a);
+	}
+
+	function hashReader() {
+		document.getElementById("iframeA").style.display = "none";
+		if (location.hash.substr(0, 2) == "#/") {
+			if (location.hash.substr(-1) == "/") {
+				dataJS(location.hash.substr(2) + "index");
+			} else {
+				dataJS(location.hash.substr(2));
+			}
+		} else {
+			history.replaceState(undefined, undefined, "#/"
+					+ location.hash.substr(1));
+			hashReader();
+		}
+	}
+
+	window.onhashchange = hashReader;
+
+	hashReader();
+
+	function fromXML(ctx) {
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				if (this.responseURL.search(/\.margarine\?\d+$/gi) > -1) {
+					parser(this);
+				} else {
+					clearInterval(o);
+					if (location.hash.substr(-1) != "/") {
+						history.replaceState(undefined, undefined,
+								location.hash + "/");
+						hashReader();
+					} else if (location.hash
+							.substr(0, location.hash.length - 1).lastIndexOf(
+									"/") > 1) {
+						history.replaceState(undefined, undefined,
+								location.hash.substr(0, location.hash.substr(0,
+										location.hash.length - 1).lastIndexOf(
+										"/")));
+						hashReader();
+					} else if (location.hash != "#/") {
+						history.replaceState(undefined, undefined, "#/");
+						hashReader();
+					}
 				}
-				else if(xmlDoc.childNodes[0].childNodes[i].childNodes[j].nodeName=="h1"){
-					wH1(xmlDoc.childNodes[0].childNodes[i].childNodes[j].innerHTML);
-				}
-				else if(xmlDoc.childNodes[0].childNodes[i].childNodes[j].nodeName=="p"){
-					wA(xmlDoc.childNodes[0].childNodes[i].childNodes[j].innerHTML);
-				}
-				else if(xmlDoc.childNodes[0].childNodes[i].childNodes[j].nodeName=="button"){
-					wB(xmlDoc.childNodes[0].childNodes[i].childNodes[j].innerHTML, xmlDoc.childNodes[0].childNodes[i].childNodes[j].getAttribute("href"));
-				}
-				else if(xmlDoc.childNodes[0].childNodes[i].childNodes[j].nodeName=="html"){
-					s+=xmlDoc.childNodes[0].childNodes[i].childNodes[j].childNodes[0].wholeText;
+			} else {
+			}
+		};
+		xhttp.open("GET", ctx + ".margarine?" + (new Date() - 0), true);
+		xhttp.send();
+	}
+
+	var aaa;
+	function parser(xml) {
+		var parser = new DOMParser();
+		var xmlDoc = parser.parseFromString(xml.responseText, "text/xml");
+		var tabArr = new Array();
+		if (xmlDoc.childNodes[0].getAttribute("xmlns") == "http://square.dothome.co.kr/#/margarinebutter/") {
+			for (var i = 0; i < xmlDoc.childNodes[0].childNodes.length; i++) {
+				if (xmlDoc.childNodes[0].childNodes[i].nodeName == "link") {
+					wL(xmlDoc.childNodes[0].childNodes[i].getAttribute("href"));
+					break;
+				} else if (xmlDoc.childNodes[0].childNodes[i].nodeName == "tab") {
+					wH();
+					tabArr[tabArr.length] = [
+							xmlDoc.childNodes[0].childNodes[i]
+									.getAttribute("name"),
+							xmlDoc.childNodes[0].childNodes[i]
+									.getAttribute("icon") ];
+					for (var j = 0; j < xmlDoc.childNodes[0].childNodes[i].childNodes.length; j++) {
+						if (xmlDoc.childNodes[0].childNodes[i].childNodes[j].nodeName == "h3") {
+							wH3(xmlDoc.childNodes[0].childNodes[i].childNodes[j].innerHTML);
+						} else if (xmlDoc.childNodes[0].childNodes[i].childNodes[j].nodeName == "h1") {
+							wH1(xmlDoc.childNodes[0].childNodes[i].childNodes[j].innerHTML);
+						} else if (xmlDoc.childNodes[0].childNodes[i].childNodes[j].nodeName == "p") {
+							wA(xmlDoc.childNodes[0].childNodes[i].childNodes[j].innerHTML);
+						} else if (xmlDoc.childNodes[0].childNodes[i].childNodes[j].nodeName == "button") {
+							wB(
+									xmlDoc.childNodes[0].childNodes[i].childNodes[j].innerHTML,
+									xmlDoc.childNodes[0].childNodes[i].childNodes[j]
+											.getAttribute("href"));
+						} else if (xmlDoc.childNodes[0].childNodes[i].childNodes[j].nodeName == "html") {
+							s += xmlDoc.childNodes[0].childNodes[i].childNodes[j].childNodes[0].wholeText;
+						}
+					}
+					wF();
 				}
 			}
-			wF();
+			wForm();
+			if (xmlDoc.getElementsByTagName("back").length > 0) {
+				wBack(xmlDoc.getElementsByTagName("back")[0]
+						.getAttribute("href"), xmlDoc
+						.getElementsByTagName("back")[0].getAttribute("icon"),
+						"7px 7px", "26px 26px");
+			}
+			for (var i = 0; i < tabArr.length; i++) {
+				wM(i, tabArr[i][0], tabArr[i][1], "7px 7px", "26px 26px");
+			}
 		}
 	}
-	wForm();
-	if(xmlDoc.getElementsByTagName("back").length>0){
-		wBack(xmlDoc.getElementsByTagName("back")[0].getAttribute("href"),xmlDoc.getElementsByTagName("back")[0].getAttribute("icon"),"7px 7px","26px 26px");
-	}
-	for(var i=0;i<tabArr.length;i++){
-		wM(i, tabArr[i][0],  tabArr[i][1], "7px 7px","26px 26px");
-	}
-}
-}
-
-
 </script>
 </html>
