@@ -467,6 +467,24 @@ body {
 		}
 	}
 
+	function wCSS(ct) {
+		var fr=document.createElement('link');
+		fr.setAttribute("rel","stylesheet");
+
+		fr.setAttribute("href",ct+"?"+(new Date()-0));
+
+		document.head.appendChild(fr);
+	}
+
+	function wJS(ct) {
+		var fr=document.createElement('script');
+		fr.setAttribute("type","text/javascript");
+
+		fr.setAttribute("src",ct+"?"+(new Date()-0));
+
+		document.head.appendChild(fr);
+	}
+
 	function wH() {
 		s += "<div id='index" + (ch++) + "' class='header'></div>";
 	}
@@ -672,6 +690,10 @@ body {
 				if (xmlDoc.childNodes[0].childNodes[i].nodeName == "link") {
 					wL(xmlDoc.childNodes[0].childNodes[i].getAttribute("href"));
 					break;
+				} else if (xmlDoc.childNodes[0].childNodes[i].nodeName == "css") {
+					wCSS(xmlDoc.childNodes[0].childNodes[i].getAttribute("src"));
+				} else if (xmlDoc.childNodes[0].childNodes[i].nodeName == "js") {
+					wJS(xmlDoc.childNodes[0].childNodes[i].getAttribute("src"));
 				} else if (xmlDoc.childNodes[0].childNodes[i].nodeName == "tab") {
 					wH();
 					tabArr[tabArr.length] = [
