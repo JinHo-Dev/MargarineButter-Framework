@@ -42,6 +42,7 @@ a:link, a:visited, a:active, a:hover {
 	-webkit-user-select: none;
 	outline: none;
 	appearance: none;
+	box-sizing: content-box;
 }
 
 body {
@@ -104,6 +105,7 @@ body {
 }
 
 .button {
+	transition-duration: .3s;
 	border-radius: 4px;
 	cursor: pointer;
 	width: 160px;
@@ -114,6 +116,13 @@ body {
 	background: #09f;
 	border: 0px solid #09f;
 	color: #fff;
+}
+
+.button:hover {
+	transition-duration: 0s;
+	background: #26d;
+	color: #fff;
+	box-shadow: 0px 8px 64px rgba(34, 102, 208, 0.4);
 }
 
 .menu {
@@ -156,7 +165,7 @@ body {
 	height: 52px;
 	position: absolute;
 	width: 100%;
-	margin-top: -10px;
+	margin-top: -5px;
 }
 
 .clickable_m {
@@ -578,6 +587,10 @@ body {
 		ct_m.style.backgroundSize = e;
 	}
 
+	function wT(ct) {
+		document.title = ct;
+	}
+
 	function wBack(a, b, c, d) {
 		goBack.style.display = "block";
 		goBack_u.style.display = "block";
@@ -626,21 +639,27 @@ body {
 		o = setInterval(function() {
 			checkLoad();
 		});
-		fromXML(a);
+		fromMargarine(a);
 	}
 
+	var butterLoad = 0;
 	function hashReader() {
-		document.getElementById("iframeA").style.display = "none";
-		if (location.hash.substr(0, 2) == "#/") {
-			if (location.hash.substr(-1) == "/") {
-				dataJS(location.hash.substr(2) + "index");
+		if (butterLoad === 0) {
+			fromButter();
+		}
+		else {
+			document.getElementById("iframeA").style.display = "none";
+			if (location.hash.substr(0, 2) == "#/") {
+				if (location.hash.substr(-1) == "/") {
+					dataJS(location.hash.substr(2) + "index");
+				} else {
+					dataJS(location.hash.substr(2));
+				}
 			} else {
-				dataJS(location.hash.substr(2));
+				history.replaceState(undefined, undefined, "#/"
+						+ location.hash.substr(1));
+				hashReader();
 			}
-		} else {
-			history.replaceState(undefined, undefined, "#/"
-					+ location.hash.substr(1));
-			hashReader();
 		}
 	}
 
@@ -648,12 +667,12 @@ body {
 
 	hashReader();
 
-	function fromXML(ctx) {
+	function fromMargarine(ctx) {
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
 				if (this.responseURL.search(/\.margarine\?\d+$/gi) > -1) {
-					parser(this);
+					parser(this, 1);
 				} else {
 					clearInterval(o);
 					if (location.hash.substr(-1) != "/") {
@@ -680,21 +699,37 @@ body {
 		xhttp.send();
 	}
 
-	var aaa;
-	function parser(xml) {
+	function fromButter() {
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				if (this.responseURL.search(/index\.butter\?\d+$/gi) > -1) {
+					parser(this, 0);
+				}
+			} else {
+			}
+		};
+		xhttp.open("GET", "index.butter?" + (new Date() - 0), true);
+		xhttp.send();
+	}
+
+	function parser(xml, ct2) {
 		var parser = new DOMParser();
 		var xmlDoc = parser.parseFromString(xml.responseText, "text/xml");
 		var tabArr = new Array();
 		if (xmlDoc.childNodes[0].getAttribute("xmlns") == "http://square.dothome.co.kr/#/margarinebutter/") {
+			if (xmlDoc.childNodes[0].getAttribute("title")) {
+				wT(xmlDoc.childNodes[0].getAttribute("title"));
+			}
 			for (var i = 0; i < xmlDoc.childNodes[0].childNodes.length; i++) {
-				if (xmlDoc.childNodes[0].childNodes[i].nodeName == "link") {
+				if (xmlDoc.childNodes[0].childNodes[i].nodeName == "link" && ct2 == 1) {
 					wL(xmlDoc.childNodes[0].childNodes[i].getAttribute("href"));
 					break;
 				} else if (xmlDoc.childNodes[0].childNodes[i].nodeName == "css") {
 					wCSS(xmlDoc.childNodes[0].childNodes[i].getAttribute("src"));
 				} else if (xmlDoc.childNodes[0].childNodes[i].nodeName == "js") {
 					wJS(xmlDoc.childNodes[0].childNodes[i].getAttribute("src"));
-				} else if (xmlDoc.childNodes[0].childNodes[i].nodeName == "tab") {
+				} else if (xmlDoc.childNodes[0].childNodes[i].nodeName == "tab" && ct2 == 1) {
 					wH();
 					tabArr[tabArr.length] = [
 							xmlDoc.childNodes[0].childNodes[i]
@@ -721,15 +756,23 @@ body {
 					wF();
 				}
 			}
-			wForm();
-			if (xmlDoc.getElementsByTagName("back").length > 0) {
+			if (ct2 == 1) {
+				wForm();
+			}
+			if (xmlDoc.getElementsByTagName("back").length > 0 && ct2 == 1) {
 				wBack(xmlDoc.getElementsByTagName("back")[0]
 						.getAttribute("href"), xmlDoc
 						.getElementsByTagName("back")[0].getAttribute("icon"),
 						"7px 7px", "26px 26px");
 			}
-			for (var i = 0; i < tabArr.length; i++) {
-				wM(i, tabArr[i][0], tabArr[i][1], "7px 7px", "26px 26px");
+			if (ct2 == 1) {
+				for (var i = 0; i < tabArr.length; i++) {
+					wM(i, tabArr[i][0], tabArr[i][1], "7px 7px", "26px 26px");
+				}
+			}
+			if (ct2 == 0) {
+				butterLoad = 1;
+				hashReader();
 			}
 		}
 	}
