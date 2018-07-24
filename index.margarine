@@ -1,4 +1,6 @@
-﻿<margarine xmlns="http://square.dothome.co.kr/#/margarinebutter/">
+﻿<margarine xmlns="http://square.dothome.co.kr/#/margarinebutter/" title="Square Tools">
+	<css src="resource/index_style.css" />
+	<css src="resource/font.css" />
 	<tab name="Home" icon="home_white.png">
 		<h3>스퀘어</h3>
 		<h1>마법같이 놀라운 도구함</h1>
@@ -10,232 +12,6 @@
 		</p>
 		<html>
 		<![CDATA[
-			<style>
-
-.home, .silhouette, .fidelius, .jhsquare, .hexa, .logo4u, .manual, .download, .gallery, .features{
-width:40px;
-height:40px;
-margin:0px;
-}
-
-.appsquare{
-width:60px;
-height:60px;
-margin:-10px;
-}
-
-.nubilo, .jhlogo{
-width:30px;
-height:30px;
-margin:5px;
-}
-
-.filesquare{
-width:50px;
-height:50px;
-margin:-5px;
-}
-
-#silhouetteFlow img{
-margin:0px;
-padding:0px;
-width:200px;
-height:200px;
-}
-
-#silhouetteFlow div{
-transform:translateY(0px);
-animation:silhouette_demo 10s linear infinite;
-margin:0px;
-padding:0px;
-overflow:visible;
-width:200px;
-}
-
-#silhouetteFlow{
-line-height:0px;
-overflow:hidden;
-background-image:url(resource/silhouette_img0.png);
-width:200px;
-height:200px;
-margin:0px;
-padding:0px;
-}
-
-#nubiloFlow img{
-margin:0px;
-padding:0px;
-width:200px;
-height:374px;
-}
-
-#nubiloFlow div{
-opacity:0;
-transform:translateY(0px);
-animation:nubilo_demo 10s linear infinite;
-margin:0px;
-padding:0px;
-overflow:visible;
-width:200px;
-}
-
-#nubiloFlow{
-line-height:0px;
-overflow:hidden;
-background-image:url(resource/nubilo_img0.png);
-width:200px;
-height:374px;
-margin:0px;
-padding:0px;
-}
-
-#logoFlow div{
-transform:translateX(0px);
-animation:home_demo 15s linear infinite;
-margin:0px;
-padding:0px;
-overflow-x:visible;
-overflow-y:hidden;
-width:610px;
-}
-
-#logoFlow img{
-padding-left:10px;
-padding-right:10px;
-float:left;
-}
-
-#logoFlow{
-overflow:hidden;
-width:400px;
-overflow:hidden;
-}
-
-@keyframes silhouette_demo{
-0%{
-transform:translateY(0px);
-}
-20%{
-transform:translateY(0px);
-}
-25%{
-transform:translateY(-200px);
-}
-45%{
-transform:translateY(-200px);
-}
-50%{
-transform:translateY(-400px);
-}
-70%{
-transform:translateY(-400px);
-}
-75%{
-transform:translateY(-600px);
-}
-95%{
-transform:translateY(-600px);
-}
-100%{
-transform:translateY(-800px);
-}
-}
-
-@keyframes home_demo{
-0%{
-transform:translateX(0px);
-}
-50%{
-transform:translateX(-210px);
-}
-100%{
-transform:translateX(0px);
-}
-}
-
-@keyframes nubilo_demo{
-0.1%{
-opacity:0;
-transform:translateY(0px);
-}
-2%{
-opacity:1;
-transform:translateY(0px);
-}
-18%{
-opacity:1;
-transform:translateY(0px);
-}
-20%{
-opacity:0;
-transform:translateY(0px);
-}
-20.1%{
-opacity:0;
-transform:translateY(-374px);
-}
-22%{
-opacity:1;
-transform:translateY(-374px);
-}
-38%{
-opacity:1;
-transform:translateY(-374px);
-}
-40%{
-opacity:0;
-transform:translateY(-374px);
-}
-40.1%{
-opacity:0;
-transform:translateY(-748px);
-}
-42%{
-opacity:1;
-transform:translateY(-748px);
-}
-58%{
-opacity:1;
-transform:translateY(-748px);
-}
-60%{
-opacity:0;
-transform:translateY(-748px);
-}
-60.1%{
-opacity:0;
-transform:translateY(-1122px);
-}
-62%{
-opacity:1;
-transform:translateY(-1122px);
-}
-78%{
-opacity:1;
-transform:translateY(-1122px);
-}
-80%{
-opacity:0;
-transform:translateY(-1122px);
-}
-80.1%{
-opacity:0;
-transform:translateY(-1496px);
-}
-82%{
-opacity:1;
-transform:translateY(-1496px);
-}
-98%{
-opacity:1;
-transform:translateY(-1496px);
-}
-100%{
-opacity:0;
-transform:translateY(-1496px);
-}
-}
-			</style>
 			<div id='logoFlow' class='image'>
 				<div>
 					<img src='resource/home.png' class='home'>
@@ -331,12 +107,13 @@ transform:translateY(-1496px);
 			피델리우스는 현재 계획 중에 있습니다. 
 		</p>
 	</tab>
-	<tab name="MBF" icon="home_white.png">
+	<tab name="MBF" icon="margarinebutter_white.png">
 		<h3>마가린버터</h3>
 		<h1>간결하고 우아한 웹의 기본</h1>
 		<p>
 			쉽고 빠르게 웹을 만들어보세요. 
 			작동이 부드럽고 빠릅니다. 
 		</p>
+		<button href="#margarinebutter/">자세히 알아보기</button>
 	</tab>
 </margarine>
