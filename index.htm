@@ -410,10 +410,12 @@ body {
 		for (var i = 0; i < ch; i++) {
 			document.getElementById("menu" + i).style.backgroundColor = '#fff';
 			document.getElementById("menu" + i).style.color = '#aaa';
+			document.getElementsByClassName("clickable_m")[i].style.backgroundColor = 'rgba(255, 255, 255, 0)';
 		}
 		if (ch > 0) {
 			document.getElementById('menu' + m).style.backgroundColor = '#09f';
 			document.getElementById('menu' + m).style.color = '#fff';
+			document.getElementsByClassName("clickable_m")[m].style.backgroundColor = 'rgba(255, 255, 255, 0.25)';
 		}
 	}
 
@@ -558,6 +560,7 @@ body {
 					+ "px;' class='clickable'></div>";
 			sv_m += "<div onclick='menu(" + i + ")' onmousedown='menu(" + i
 					+ ")' style='left:" + (100 / ch * i)
+					+ "%;width:" + (100 / ch)
 					+ "%;' class='clickable_m'></div>";
 		}
 		menuSelect.innerHTML = sv;
