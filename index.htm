@@ -389,19 +389,20 @@ body {
 
 	window.onscroll = scr;
 	function scr() {
-		h = (document.body.scrollHeight | document.documentElement.scrollHeight);
+		h = (document.body.scrollHeight | document.documentElement.scrollHeight)
+			 * m_scl;
 		m = -1;
 		if (ch > 0) {
 			if (!(article.offsetHeight > 0)) {
 				m = 0;
-			} else if (document.getElementById("index" + (ch - 1)).offsetTop <= window.scrollY
-					+ window.innerHeight / 3
-					|| h - window.scrollY - window.innerHeight < 10) {
+			} else if (document.getElementById("index" + (ch - 1)).offsetTop * m_scl <= window.scrollY
+					+ window.innerHeight * m_scl / 3
+					|| h - window.scrollY - window.innerHeight * m_scl < 10) {
 				m = ch - 1;
 			} else {
 				for (var i = ch - 2; i >= 0 && m == -1; i--) {
-					if (document.getElementById("index" + i).offsetTop <= window.scrollY
-							+ window.innerHeight / 3) {
+					if (document.getElementById("index" + i).offsetTop * m_scl <= window.scrollY
+							+ window.innerHeight * m_scl / 3) {
 						m = i;
 					}
 				}
