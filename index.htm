@@ -389,19 +389,20 @@ body {
 
 	window.onscroll = scr;
 	function scr() {
-		h = (document.body.scrollHeight | document.documentElement.scrollHeight);
+		h = (document.body.scrollHeight | document.documentElement.scrollHeight)
+			 * m_scl;
 		m = -1;
 		if (ch > 0) {
 			if (!(article.offsetHeight > 0)) {
 				m = 0;
-			} else if (document.getElementById("index" + (ch - 1)).offsetTop <= window.scrollY
-					+ window.innerHeight / 3
-					|| h - window.scrollY - window.innerHeight < 10) {
+			} else if (document.getElementById("index" + (ch - 1)).offsetTop * m_scl <= window.scrollY
+					+ window.innerHeight * m_scl / 3
+					|| h - window.scrollY - window.innerHeight * m_scl < 10) {
 				m = ch - 1;
 			} else {
 				for (var i = ch - 2; i >= 0 && m == -1; i--) {
-					if (document.getElementById("index" + i).offsetTop <= window.scrollY
-							+ window.innerHeight / 3) {
+					if (document.getElementById("index" + i).offsetTop * m_scl <= window.scrollY
+							+ window.innerHeight * m_scl / 3) {
 						m = i;
 					}
 				}
@@ -410,10 +411,12 @@ body {
 		for (var i = 0; i < ch; i++) {
 			document.getElementById("menu" + i).style.backgroundColor = '#fff';
 			document.getElementById("menu" + i).style.color = '#aaa';
+			document.getElementsByClassName("clickable_m")[i].style.backgroundColor = 'rgba(255, 255, 255, 0)';
 		}
 		if (ch > 0) {
 			document.getElementById('menu' + m).style.backgroundColor = '#09f';
 			document.getElementById('menu' + m).style.color = '#fff';
+			document.getElementsByClassName("clickable_m")[m].style.backgroundColor = 'rgba(255, 255, 255, 0.25)';
 		}
 	}
 
@@ -558,6 +561,7 @@ body {
 					+ "px;' class='clickable'></div>";
 			sv_m += "<div onclick='menu(" + i + ")' onmousedown='menu(" + i
 					+ ")' style='left:" + (100 / ch * i)
+					+ "%;width:" + (100 / ch)
 					+ "%;' class='clickable_m'></div>";
 		}
 		menuSelect.innerHTML = sv;
