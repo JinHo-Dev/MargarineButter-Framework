@@ -33,10 +33,10 @@ To users who surfing your website around, It shows web faster and less laggy.
 2. Open index.htm with web browser (recommend Chrome)
 
 # Version History
-## v1.0 (2018.07.11)
+### v1.0 (2018.07.11)
 * Added to GitHub. 
 
-## Subsequent Objective
+### Subsequent Objective
 * Add new features as follow
 > Modal Window, Controller, Gallery View, Input & Textarea
 * Fix bugs as follow
