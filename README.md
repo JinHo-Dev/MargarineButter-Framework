@@ -28,13 +28,21 @@ So user can navigate easily and feel hierarchy of the page.
 It takes up little of server storage and of course, uses small amount of traffic. 
 To users who surfing your website around, It shows web faster and less laggy. 
 
-# Installation
+# Get Started
 1. Start Server
 2. Open index.htm with web browser (recommend Chrome)
 
 # Version History
-* v1.0 (2018.07.11)
-> Added to GitHub. 
+## v1.0 (2018.07.11)
+* Added to GitHub. 
+
+## Subsequent Objective
+* Add new features as follow
+> Modal Window, Controller, Gallery View, Input & Textarea
+* Fix bugs as follow
+> Can't see old-browswer-window in IE
+* Changes
+> Show tab names in mobile view
 
 # Links
 see example page here
