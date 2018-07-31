@@ -696,6 +696,24 @@ body {
 						hashReader();
 					}
 				}
+			} else if (this.readyState == 4 && this.status == 0) {
+				clearInterval(o);
+				if (location.hash.substr(-1) != "/") {
+					history.replaceState(undefined, undefined,
+							location.hash + "/");
+					hashReader();
+				} else if (location.hash
+						.substr(0, location.hash.length - 1).lastIndexOf(
+								"/") > 1) {
+					history.replaceState(undefined, undefined,
+							location.hash.substr(0, location.hash.substr(0,
+									location.hash.length - 1).lastIndexOf(
+									"/")));
+					hashReader();
+				} else if (location.hash != "#/") {
+					history.replaceState(undefined, undefined, "#/");
+					hashReader();
+				}
 			} else {
 			}
 		};

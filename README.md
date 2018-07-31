@@ -40,7 +40,7 @@ To users who surfing your website around, It shows web faster and less laggy.
 * Add new features as follow
 > Modal Window, Controller, Gallery View, Input & Textarea
 * Fix bugs as follow
-> Can't see old-browswer-window in IE
+> Can't see old-browser-alert in IE
 * Changes
 > Show tab names in mobile view
 
