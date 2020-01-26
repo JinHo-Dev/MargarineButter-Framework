@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta charset="utf-8">
@@ -342,8 +342,7 @@ body {
 		p = new Date() - 0;
 		l = window.scrollY;
 		k = 0;
-		h = (document.body.scrollHeight | document.documentElement.scrollHeight)
-				* m_scl;
+		h = (document.body.scrollHeight | document.documentElement.scrollHeight);
 		v = Math.abs(document.getElementById('index' + n).offsetTop * m_scl
 				- window.scrollY) / 0.3;
 		o = setInterval(function() {
@@ -355,7 +354,7 @@ body {
 						* m_scl);
 				clearInterval(o);
 			} else if (n == ch - 1
-					&& h - window.scrollY - window.innerHeight * m_scl < 10) {
+					&& h - window.scrollY - window.innerHeight < 10) {
 				clearInterval(o);
 			} else if (window.scrollY
 					- document.getElementById('index' + n).offsetTop * m_scl > 4) {
@@ -389,20 +388,19 @@ body {
 
 	window.onscroll = scr;
 	function scr() {
-		h = (document.body.scrollHeight | document.documentElement.scrollHeight)
-			 * m_scl;
+		h = (document.body.scrollHeight | document.documentElement.scrollHeight);
 		m = -1;
 		if (ch > 0) {
 			if (!(article.offsetHeight > 0)) {
 				m = 0;
 			} else if (document.getElementById("index" + (ch - 1)).offsetTop * m_scl <= window.scrollY
-					+ window.innerHeight * m_scl / 3
-					|| h - window.scrollY - window.innerHeight * m_scl < 10) {
+					+ window.innerHeight / 3
+					|| h - window.scrollY - window.innerHeight < 10) {
 				m = ch - 1;
 			} else {
 				for (var i = ch - 2; i >= 0 && m == -1; i--) {
 					if (document.getElementById("index" + i).offsetTop * m_scl <= window.scrollY
-							+ window.innerHeight * m_scl / 3) {
+							+ window.innerHeight / 3) {
 						m = i;
 					}
 				}
@@ -539,7 +537,12 @@ body {
 			}, 310);
 		}
 		document.getElementById("iframeA").style.display = "";
-		iframeA.location.replace(ct);
+		if(param.length>0){
+			iframeA.location.replace(ct+"?"+param);
+		}
+		else{
+			iframeA.location.replace(ct+"?"+param);
+		}
 	}
 
 	function wForm() {
@@ -643,19 +646,30 @@ body {
 		o = setInterval(function() {
 			checkLoad();
 		});
-		fromMargarine(a);
+		fromMargarine(a.split("?")[0]);
 	}
 
+	var param='';
 	var butterLoad = 0;
 	function hashReader() {
 		if (butterLoad === 0) {
 			fromButter();
 		}
 		else {
+			if(location.hash.split("?").length>1){
+				param=location.hash.split("?")[1];
+			}
+			else{
+				param='';
+			}
 			document.getElementById("iframeA").style.display = "none";
 			if (location.hash.substr(0, 2) == "#/") {
-				if (location.hash.substr(-1) == "/") {
-					dataJS(location.hash.substr(2) + "index");
+				if (location.hash.split("?")[0].substr(-1) == "/") {
+					dataJS(location.hash.split("?")[0].substr(2) + "index");
+				} else if (location.hash.split("?")[0].substr(-6) == "/index") {
+					history.replaceState(undefined, undefined, 
+							location.hash.split("?")[0].substr(0,location.hash.split("?")[0].length-5));
+					hashReader();
 				} else {
 					dataJS(location.hash.substr(2));
 				}
@@ -674,10 +688,30 @@ body {
 	function fromMargarine(ctx) {
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-				if (this.responseURL.search(/\.margarine\?\d+$/gi) > -1) {
-					parser(this, 1);
-				} else {
+			try{
+				if (this.readyState == 4 && this.status == 200) {
+					if (this.responseURL.search(/\.margarine\?\d+$/gi) > -1) {
+						parser(this, 1);
+					} else {
+						clearInterval(o);
+						if (location.hash.substr(-1) != "/") {
+							history.replaceState(undefined, undefined,
+									location.hash + "/");
+							hashReader();
+						} else if (location.hash
+								.substr(0, location.hash.length - 1).lastIndexOf(
+										"/") > 1) {
+							history.replaceState(undefined, undefined,
+									location.hash.substr(0, location.hash.substr(0,
+											location.hash.length - 1).lastIndexOf(
+											"/")));
+							hashReader();
+						} else if (location.hash != "#/") {
+							history.replaceState(undefined, undefined, "#/");
+							hashReader();
+						}
+					}
+				} else if (this.readyState > 1 && this.status == 0) {
 					clearInterval(o);
 					if (location.hash.substr(-1) != "/") {
 						history.replaceState(undefined, undefined,
@@ -695,29 +729,13 @@ body {
 						history.replaceState(undefined, undefined, "#/");
 						hashReader();
 					}
+				} else{
 				}
-			} else if (this.readyState == 4 && this.status == 0) {
-				clearInterval(o);
-				if (location.hash.substr(-1) != "/") {
-					history.replaceState(undefined, undefined,
-							location.hash + "/");
-					hashReader();
-				} else if (location.hash
-						.substr(0, location.hash.length - 1).lastIndexOf(
-								"/") > 1) {
-					history.replaceState(undefined, undefined,
-							location.hash.substr(0, location.hash.substr(0,
-									location.hash.length - 1).lastIndexOf(
-									"/")));
-					hashReader();
-				} else if (location.hash != "#/") {
-					history.replaceState(undefined, undefined, "#/");
-					hashReader();
-				}
-			} else {
+			} catch( e ){
 			}
 		};
 		xhttp.open("GET", ctx + ".margarine?" + (new Date() - 0), true);
+		xhttp.timeout=500;
 		xhttp.send();
 	}
 
